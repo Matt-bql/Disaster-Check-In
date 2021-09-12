@@ -9,7 +9,7 @@ export default function Header({ ...otherProps }) {
 
   return (
     <>
-      <div className='bg-white-700 relative p-2.5'>
+      <div className='bg-gray-700 bg-opacity-0 relative p-2.5 font-mono'>
         <div className='max-w-7xl mx-auto flex items-center justify-between'>
           <div className='w-14'>Logo</div>
           <div
@@ -31,28 +31,40 @@ export default function Header({ ...otherProps }) {
             <ul className='md:flex-row md:flex'>
               <li className='list-none md:mr-5'>
                 <Link
+                  to='/feedback-form'
                   className='flex w-full text-base uppercase hover:text-red-600 cursor-pointer
                 pt-2.5 px-2.5'
                 >
-                  page
+                  feedback
+                </Link>
+              </li>
+              <li className='list-none md:mr-5'>
+                <Link
+                  to='/'
+                  className='flex w-full text-base uppercase hover:text-red-600 cursor-pointer
+                pt-2.5 px-2.5'
+                >
+                  Home
                 </Link>
               </li>
 
               <li lassName='list-none md:mr-5'>
                 <Link
+                  to='/about-page'
                   className='flex w-full text-base uppercase hover:text-red-600 cursor-pointer
                 pt-2.5 px-2.5'
                 >
-                  page
+                  About
                 </Link>
               </li>
 
               <li lassName='list-none md:mr-5'>
                 <Link
+                  to='register-login-form'
                   className='flex w-full text-base uppercase hover:text-red-600 cursor-pointer
                 pt-2.5 px-2.5'
                 >
-                  page
+                  Register/Login
                 </Link>
               </li>
             </ul>

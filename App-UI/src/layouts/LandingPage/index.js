@@ -1,5 +1,6 @@
 import React from "react";
 import Header from "../components/Header";
+import Footer from "../components/Footer";
 import hero from "./../../assets/hero.jpg";
 
 export default function LandingPageLayout({ heading, ...otherProps }) {
@@ -14,7 +15,7 @@ export default function LandingPageLayout({ heading, ...otherProps }) {
           style={{ backgroundImage: `url(${hero})` }}
         >
           {heading && (
-            <h1 className='relative px-2.5 text-white uppercase z-10 text-xl text-center md:text-6xl'>
+            <h1 className='relative px-2.5 text-white uppercase z-10 text-4xl text-center md:text-6xl font-mono'>
               {heading}
             </h1>
           )}
@@ -23,6 +24,7 @@ export default function LandingPageLayout({ heading, ...otherProps }) {
         </div>
       </div>
       <div className='w-full max-w-7xl mx-auto'>{otherProps.children}</div>
+      <Footer />
     </div>
   );
 }
