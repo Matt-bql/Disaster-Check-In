@@ -1,6 +1,6 @@
 import React from "react";
-import Header from "../components/Header";
-import Footer from "../components/Footer";
+import Header from "../../components/Header";
+import Footer from "../../components/Footer";
 import hero from "./../../assets/hero.jpg";
 
 export default function LandingPageLayout({ heading, ...otherProps }) {

@@ -1,5 +1,5 @@
 import React from "react";
-import Cards from "./../../layouts/components/Cards";
+import Cards from "./../../components/Cards";
 
 export default function HomePage({ ...otherProps }) {
   return (

@@ -9,7 +9,7 @@ export default function Header({ ...otherProps }) {
 
   return (
     <>
-      <div className='bg-gray-700 bg-opacity-0 relative p-2.5 font-mono'>
+      <div className='  relative p-2.5 font-mono'>
         <div className='max-w-7xl mx-auto flex items-center justify-between'>
           <div className='w-14'>Logo</div>
           <div
