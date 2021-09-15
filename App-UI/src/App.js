@@ -9,7 +9,7 @@ function App() {
     <div>
       <Switch>
         <Route path='/'>
-          <LandingPageLayout heading='Disaster Check-In'>
+          <LandingPageLayout heading='When disasters happen...'>
             <HomePage />
           </LandingPageLayout>
         </Route>

@@ -9,7 +9,7 @@ export default function Header({ ...otherProps }) {
 
   return (
     <>
-      <div className='  relative p-2.5 font-mono'>
+      <div className='relative p-2.5 '>
         <div className='max-w-7xl mx-auto flex items-center justify-between'>
           <div className='w-14'>Logo</div>
           <div
@@ -24,11 +24,11 @@ export default function Header({ ...otherProps }) {
 
           <nav
             className={`${!active && "hidden"}
-          absolute flex flex-col bg-white top-full w-full left-0 z-20
-          md:static md:w-auto md:flex-row md:flex
+            absolute flex flex-col bg-white top-full w-full left-0 z-20
+          md:static md:w-auto md:flex-row md:flex 
           `}
           >
-            <ul className='md:flex-row md:flex'>
+            <ul className='md:flex-row md:flex content-around'>
               <li className='list-none md:mr-5'>
                 <Link
                   to='/feedback-form'
@@ -48,7 +48,7 @@ export default function Header({ ...otherProps }) {
                 </Link>
               </li>
 
-              <li lassName='list-none md:mr-5'>
+              <li className='list-none md:mr-5'>
                 <Link
                   to='/about-page'
                   className='flex w-full text-base uppercase hover:text-red-600 cursor-pointer
@@ -58,7 +58,7 @@ export default function Header({ ...otherProps }) {
                 </Link>
               </li>
 
-              <li lassName='list-none md:mr-5'>
+              <li className='list-none md:mr-5'>
                 <Link
                   to='register-login-form'
                   className='flex w-full text-base uppercase hover:text-red-600 cursor-pointer
