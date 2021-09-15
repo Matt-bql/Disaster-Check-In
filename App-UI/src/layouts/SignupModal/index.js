@@ -1,11 +1,39 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Signup from "../../components/Signup";
 
-export default function SignupModal() {
+export default function SignupModal({ setIsButtonClicked }) {
+  const node = useRef();
+
+  const handleClick = e => {
+    if (node.current.contains(e.target)) {
+      // inside click
+      return;
+    }
+    // outside click
+    setIsButtonClicked(false);
+  };
+
+  useEffect(() => {
+    document.addEventListener("mousedown", handleClick);
+
+    return () => {
+      document.removeEventListener("mousedown", handleClick);
+    };
+  }, []);
+
   return (
-    <div class='flex fixed top-20 z-50 outline-none focus:outline-none   items-center justify-center bg-gray-50 py-12 px-4 sm:px-6 lg:px-8'>
+    <div
+      ref={node}
+      class='flex fixed top-20 z-50 outline-none focus:outline-none   items-center justify-center bg-gray-50 py-12 px-4 sm:px-6 lg:px-8'
+    >
       <div class='max-w-md w-full space-y-8'>
         <div>
+          <div
+            class='inline-block rounded-sm border border-black border-8 py-.5 px-2 hover:bg-purple-700 hover:text-white cursor-pointer float-right'
+            onClick={() => setIsButtonClicked(false)}
+          >
+            X
+          </div>
           <img
             class='mx-auto h-12 w-auto'
             src='https://tailwindui.com/img/logos/workflow-mark-indigo-600.svg'
@@ -14,15 +42,6 @@ export default function SignupModal() {
           <h2 class='mt-6 text-center text-3xl font-extrabold text-gray-900'>
             Sign in to your account
           </h2>
-          <p class='mt-2 text-center text-sm text-gray-600'>
-            Or
-            <a
-              href='#'
-              class='font-medium text-indigo-600 hover:text-indigo-500'
-            >
-              start your 14-day free trial
-            </a>
-          </p>
         </div>
         <form class='mt-8 space-y-6' action='#' method='POST'>
           <input type='hidden' name='remember' value='true' />
@@ -102,6 +121,18 @@ export default function SignupModal() {
               </span>
               Sign in
             </button>
+            <label
+              for='remember-me'
+              class='flex justify-center mt-10 ml-2 block text-sm text-gray-900'
+            >
+              Or
+            </label>
+            <a
+              href='#'
+              class='flex justify-center font-medium text-indigo-600 hover:text-indigo-500 '
+            >
+              Create An Account
+            </a>
           </div>
         </form>
       </div>

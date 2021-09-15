@@ -41,6 +41,7 @@ export default function LandingPageLayout({ heading, ...otherProps }) {
               </button>
               {isButtonClicked ? (
                 <SignupModal
+                  setIsButtonClicked={setIsButtonClicked}
                   isOpen={isButtonClicked}
                   onRequestClose={CloseModal}
                   shouldCloseOnOverlayClick={true}
