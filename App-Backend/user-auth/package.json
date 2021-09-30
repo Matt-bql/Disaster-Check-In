@@ -1,0 +1,11 @@
+{
+  "name": "register-login-system",
+  "author": "self",
+  "version": "1.0.0",
+  "dependencies": {
+    "aws-sdk": "^2.992.0",
+    "bcryptjs": "^2.4.3",
+    "jsonwebtoken": "^8.5.1",
+    "yarn": "^1.22.11"
+  }
+}

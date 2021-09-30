@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { BrowserRouter as Router, Link } from "react-router-dom";
 
 export default function Header({ ...otherProps }) {
   const [active, setActive] = useState(false);
@@ -18,7 +18,6 @@ export default function Header({ ...otherProps }) {
           md:hidden uppercase
           `}
           >
-            {" "}
             Menu
           </div>
 
@@ -29,44 +28,37 @@ export default function Header({ ...otherProps }) {
           `}
           >
             <ul className='md:flex-row md:flex content-around'>
-              <li className='list-none md:mr-5'>
-                <Link
-                  to='/feedback-form'
-                  className='flex w-full text-base uppercase hover:text-red-600 cursor-pointer
+              <Link
+                to='/feedback'
+                className='list-none md:mr-5 flex w-full text-base uppercase hover:text-red-600 cursor-pointer
                 pt-2.5 px-2.5'
-                >
-                  feedback
-                </Link>
-              </li>
-              <li className='list-none md:mr-5'>
-                <Link
-                  to='/'
-                  className='flex w-full text-base uppercase hover:text-red-600 cursor-pointer
-                pt-2.5 px-2.5'
-                >
-                  Home
-                </Link>
-              </li>
+              >
+                feedback
+              </Link>
 
-              <li className='list-none md:mr-5'>
-                <Link
-                  to='/about-page'
-                  className='flex w-full text-base uppercase hover:text-red-600 cursor-pointer
+              <Link
+                to='/'
+                className='list-none md:mr-5 flex w-full text-base uppercase hover:text-red-600 cursor-pointer
                 pt-2.5 px-2.5'
-                >
-                  About
-                </Link>
-              </li>
+              >
+                Home
+              </Link>
 
-              <li className='list-none md:mr-5'>
-                <Link
-                  to='register-login-form'
-                  className='flex w-full text-base uppercase hover:text-red-600 cursor-pointer
+              <Link
+                to='/About'
+                className='list-none md:mr-5 flex w-full text-base uppercase hover:text-red-600 cursor-pointer
                 pt-2.5 px-2.5'
-                >
-                  Register/Login
-                </Link>
-              </li>
+              >
+                About
+              </Link>
+
+              <Link
+                to='/create-account'
+                className='list-none md:mr-5 flex w-full text-base uppercase hover:text-red-600 cursor-pointer
+                pt-2.5 px-2.5'
+              >
+                Signup/Login
+              </Link>
             </ul>
           </nav>
         </div>
