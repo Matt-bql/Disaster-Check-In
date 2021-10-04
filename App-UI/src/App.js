@@ -1,13 +1,21 @@
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-// Layouts
-import LandingPageLayout from "./layouts/LandingPage";
+
 // Pages
-import Signup from "./pages/Signup-Page";
+import HomePage from "./pages/HomePage";
+import SignupPage from "./pages/Signup-Page";
 //Components
 import Header from "./components/Header";
 import Footer from "./components/Footer";
-import LoginForm from "./components/LoginForm";
 import UserAccount from "./pages/UserAccount";
+
+import Amplify from "aws-amplify";
+import awsconfig from "./aws-exports";
+import {
+  AmplifySignOut,
+  withAuthenticator,
+  AmplifyAuthenticator,
+} from "@aws-amplify/ui-react";
+Amplify.configure(awsconfig);
 
 function App() {
   return (
@@ -15,12 +23,14 @@ function App() {
       <Router>
         <Header />
         <Switch>
-          <Route path='/' exact component={LandingPageLayout} />
-          <Route path='/create-account' exact component={Signup} />
+          <Route path='/' exact component={HomePage} />
+          <Route path='/create-account' exact component={SignupPage} />
           <Route path='/feedback' />
-          <Route path='/login' exact component={LoginForm} />
           <Route path='/about' />
-          <Route path='/user-account' exact component={UserAccount} />
+
+          <AmplifyAuthenticator>
+            <Route path='/my-account' exact component={UserAccount} />
+          </AmplifyAuthenticator>
         </Switch>
         <Footer />
       </Router>

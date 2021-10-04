@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { BrowserRouter as Router, Link } from "react-router-dom";
+import { AmplifySignOut } from "@aws-amplify/ui-react";
 
 export default function Header({ ...otherProps }) {
   const [active, setActive] = useState(false);
@@ -53,7 +54,7 @@ export default function Header({ ...otherProps }) {
               </Link>
 
               <Link
-                to='/create-account'
+                to='/my-account'
                 className='list-none md:mr-5 flex w-full text-base uppercase hover:text-red-600 cursor-pointer
                 pt-2.5 px-2.5'
               >
