@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import axios from "axios";
+import React from "react";
+
 // import Signup from "../../pages/Signup-Page";
 import { AmplifyAuthenticator } from "@aws-amplify/ui-react";
 
