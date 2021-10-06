@@ -10,6 +10,7 @@ import UserAccount from "./pages/UserAccount";
 
 import Amplify from "aws-amplify";
 import awsconfig from "./aws-exports";
+
 import {
   AmplifySignOut,
   withAuthenticator,

@@ -1,19 +1,25 @@
 {
   "dev": {
     "awscloudformation": {
-      "AuthRoleName": "amplify-serverlessamplify-dev-145007-authRole",
-      "UnauthRoleArn": "arn:aws:iam::428532364871:role/amplify-serverlessamplify-dev-145007-unauthRole",
-      "AuthRoleArn": "arn:aws:iam::428532364871:role/amplify-serverlessamplify-dev-145007-authRole",
+      "AuthRoleName": "amplify-disastercheckin-dev-94933-authRole",
+      "UnauthRoleArn": "arn:aws:iam::428532364871:role/amplify-disastercheckin-dev-94933-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::428532364871:role/amplify-disastercheckin-dev-94933-authRole",
       "Region": "us-east-2",
-      "DeploymentBucketName": "amplify-serverlessamplify-dev-145007-deployment",
-      "UnauthRoleName": "amplify-serverlessamplify-dev-145007-unauthRole",
-      "StackName": "amplify-serverlessamplify-dev-145007",
-      "StackId": "arn:aws:cloudformation:us-east-2:428532364871:stack/amplify-serverlessamplify-dev-145007/1f3e6020-2483-11ec-a279-06b00cbca538",
-      "AmplifyAppId": "d3mb8ykll4pxze"
+      "DeploymentBucketName": "amplify-disastercheckin-dev-94933-deployment",
+      "UnauthRoleName": "amplify-disastercheckin-dev-94933-unauthRole",
+      "StackName": "amplify-disastercheckin-dev-94933",
+      "StackId": "arn:aws:cloudformation:us-east-2:428532364871:stack/amplify-disastercheckin-dev-94933/a074ca20-26b4-11ec-aa90-0ada02e89c72",
+      "AmplifyAppId": "d2xta4z78wwid6"
     },
     "categories": {
+      "hosting": {
+        "amplifyhosting": {
+          "appId": "d2xta4z78wwid6",
+          "type": "manual"
+        }
+      },
       "auth": {
-        "serverlessamplifyea6058f2": {}
+        "disastercheckin71a0a4e2": {}
       }
     }
   }
