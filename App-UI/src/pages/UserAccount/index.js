@@ -1,5 +1,11 @@
 import React from "react";
+import { AmplifySignOut } from "@aws-amplify/ui-react";
 
 export default function UserAccount() {
-  return <div>This is your account.</div>;
+  return (
+    <div className='w-1'>
+      This is your account.
+      <AmplifySignOut />
+    </div>
+  );
 }
