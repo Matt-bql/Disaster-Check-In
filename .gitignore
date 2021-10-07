@@ -4,6 +4,7 @@ test
 tailwind.config.js
 craco.config.js
 /amplify
+practice.js
 
 #amplify-do-not-edit-begin
 amplify/\#current-cloud-backend

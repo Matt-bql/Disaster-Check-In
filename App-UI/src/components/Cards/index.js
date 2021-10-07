@@ -6,7 +6,8 @@ export default function Cards({ ...otherProps }) {
     <div className='flex flex-row flex-wrap py-14 justify-center '>
       <div
         className='
-      w-full lg:w-2/5 xl:w-4/12
+        
+      sm:w-3/4 lg:w-2/5 xl:w-4/12
       px-2.5 mb-5'
       >
         <div className=' bg-white'>
@@ -38,7 +39,7 @@ export default function Cards({ ...otherProps }) {
       </div>
       <div
         className='
-      w-full lg:w-2/5 xl:w-4/12
+        sm:w-3/4 w-full lg:w-2/5 xl:w-4/12
       px-2.5 mb-5'
       >
         <div className='bg-white'>
