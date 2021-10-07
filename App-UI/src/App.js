@@ -7,10 +7,9 @@ import SignupPage from "./pages/Signup-Page";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import UserAccount from "./pages/UserAccount";
-
+//Amplify
 import Amplify from "aws-amplify";
 import awsconfig from "./aws-exports";
-
 import {
   AmplifySignOut,
   withAuthenticator,
