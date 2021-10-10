@@ -1,8 +1,8 @@
 {
-    "identityPoolName": "disastercheckin71a0a4e2_identitypool_71a0a4e2",
+    "identityPoolName": "disastercheckin_identity_pool",
     "allowUnauthenticatedIdentities": false,
-    "resourceNameTruncated": "disast71a0a4e2",
-    "userPoolName": "disastercheckin71a0a4e2_userpool_71a0a4e2",
+    "resourceNameTruncated": "disastc7de5ea9",
+    "userPoolName": "disastercheckin_user_pool",
     "autoVerifiedAttributes": [
         "email"
     ],
@@ -18,7 +18,8 @@
     "passwordPolicyMinLength": 8,
     "passwordPolicyCharacters": [],
     "requiredAttributes": [
-        "email"
+        "email",
+        "name"
     ],
     "aliasAttributes": [],
     "userpoolClientGenerateSecret": false,
@@ -29,10 +30,10 @@
     "userpoolClientReadAttributes": [
         "email"
     ],
-    "userpoolClientLambdaRole": "disast71a0a4e2_userpoolclient_lambda_role",
+    "userpoolClientLambdaRole": "disastc7de5ea9_userpoolclient_lambda_role",
     "userpoolClientSetAttributes": false,
-    "sharedId": "71a0a4e2",
-    "resourceName": "disastercheckin71a0a4e2",
+    "sharedId": "c7de5ea9",
+    "resourceName": "disastercheckin",
     "authSelections": "identityPoolAndUserPool",
     "authRoleArn": {
         "Fn::GetAtt": [
@@ -46,12 +47,19 @@
             "Arn"
         ]
     },
-    "useDefault": "default",
-    "usernameAttributes": [
-        "email"
-    ],
+    "useDefault": "manual",
+    "thirdPartyAuth": false,
+    "userPoolGroups": false,
+    "adminQueries": true,
+    "triggers": "{}",
+    "hostedUI": false,
     "userPoolGroupList": [],
     "serviceName": "Cognito",
     "usernameCaseSensitive": false,
+    "parentStack": {
+        "Ref": "AWS::StackId"
+    },
+    "breakCircularDependency": true,
+    "permissions": [],
     "dependsOn": []
 }

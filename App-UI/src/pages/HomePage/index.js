@@ -28,7 +28,7 @@ export default function HomePage() {
                   className=' bg-transparent hover:bg-red-500 text-red-700 font-semibold hover:text-white py-2 px-4 border border-red-500 hover:border-transparent rounded
               relative uppercase z-10 text-l text-center md:text-3xl text-2xl'
                 >
-                  <Link to='/my-account'>Check-In</Link>
+                  <Link to='/user-page'>Check-In</Link>
                 </button>
               </div>
             </div>

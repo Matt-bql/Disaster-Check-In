@@ -1,21 +1,16 @@
-// module.exports = {
-//   getUser: function () {
-//     const user = sessionStorage.getItem("user");
-//     if (user === "undefined" || !user) {
-//       return null;
-//     } else {
-//       return JSON.parse(user);
-//     }
-//   },
-//   getToken: function () {
-//     return sessionStorage.getItem("token");
-//   },
-//   setUserSession: function (user, token) {
-//     sessionStorage.setItem("user", JSON.stringify(user));
-//     sessionStorage.setItem("token", token);
-//   },
-//   resetUserSession: function () {
-//     sessionStorage.removeItem("user");
-//     sessionStorage.removeItem("token");
-//   },
-// };
+import React from "react";
+import {
+  AmplifySignUp,
+  AmplifySignIn,
+  AmplifySignOut,
+  withAuthenticator,
+  AmplifyAuthenticator,
+  AmplifyGreetings,
+} from "@aws-amplify/ui-react";
+export default function AuthService() {
+  return (
+    <div>
+      <AmplifyGreetings></AmplifyGreetings>
+    </div>
+  );
+}

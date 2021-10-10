@@ -7,17 +7,18 @@
     }
   },
   "auth": {
-    "disastercheckin71a0a4e2": {
+    "disastercheckin": {
       "service": "Cognito",
       "providerPlugin": "awscloudformation",
       "dependsOn": [],
       "customAuth": false,
       "frontendAuthConfig": {
         "loginMechanisms": [
-          "EMAIL"
+          "PREFERRED_USERNAME"
         ],
         "signupAttributes": [
-          "EMAIL"
+          "EMAIL",
+          "NAME"
         ],
         "passwordProtectionSettings": {
           "passwordPolicyMinLength": 8,
