@@ -1,11 +1,14 @@
 import React, { useState } from "react";
 import PostFeed from "../../components/PostFeed";
 import InputField from "../../components/PostFeed/InputField";
+import { v4 as uuid } from "uuid";
 
 export default function AccountPage() {
   const [posts, setPosts] = useState([
     {
       post: {
+        id: uuid(),
+        userWhoPosted: "",
         userProfilePicture: "pic",
         userName: "test",
         content:
@@ -18,6 +21,8 @@ export default function AccountPage() {
     },
     {
       post: {
+        id: uuid(),
+        userWhoPosted: "",
         userProfilePicture: "pic",
         userName: "test",
         content: "need food",
@@ -41,6 +46,8 @@ export default function AccountPage() {
     setPosts([
       {
         post: {
+          id: uuid(),
+          userWhoPosted: "",
           userProfilePicture: "pic",
           userName: "test",
           content: postInput,
@@ -53,13 +60,13 @@ export default function AccountPage() {
       ...posts,
     ]);
   }
-
+  console.log(posts);
   return (
     <div className='flex-col w-screen h-screen'>
       <div className=' flex w-screen h-screen  w-1'>
         <div className='md:w-1/3 h-full bg-purple-300 hidden'>Column 1</div>
         <div className='md:w-2/3  h-full  w-screen mx-1'>
-          <div className='flex w-full justify-center items-center   bg-blue-600'>
+          <div className='flex w-full justify-center items-center   '>
             <InputField
               buttonClickHandler={buttonClickHandler}
               isClicked={isClicked}
