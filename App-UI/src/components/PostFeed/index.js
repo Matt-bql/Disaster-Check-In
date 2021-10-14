@@ -5,7 +5,14 @@ export default function PostFeed({ isClicked, posts, setPosts }) {
   return (
     <div>
       {posts.map(item => {
-        return <FeedLoop item={item.post} posts={posts} setPosts={setPosts} />;
+        return (
+          <FeedLoop
+            key={item.post.id}
+            item={item.post}
+            posts={posts}
+            setPosts={setPosts}
+          />
+        );
       })}
     </div>
   );
