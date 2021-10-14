@@ -1,28 +1,29 @@
 import React, { useState } from "react";
 import PostFeed from "../../components/PostFeed";
 import InputField from "../../components/PostFeed/InputField";
+import CustomGreeting from "../../components/CustomGreeting";
 
 export default function AccountPage() {
   const [posts, setPosts] = useState([
     {
       post: {
-        userProfilePicture: "pic",
-        userName: "test",
+        userProfilePicture: "photo",
+        userName: "username",
         content:
-          "Someone is missing and needs help. Contact me or balcasdfadsfsf for any infor. thanksasdfasdfasdfasd fasdafsdfasdfas dfasdfasdfasdf",
-        tag: "Help/Supplies Needed",
-        resolution: "user puts the resolution.",
-        likes: "",
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et ",
+        tag: "Lorem ipsum dolor Lorem ipsum dolor",
+        resolution: "resolution of post request.",
+        likes: "5",
         commentCountNumber: "3",
       },
     },
     {
       post: {
-        userProfilePicture: "pic",
-        userName: "test",
+        userProfilePicture: "photo",
+        userName: "username",
         content: "need food",
-        tag: "Lost Dog",
-        resolution: "Found!.",
+        tag: "Lorem ipsum dolor sit amet, consectetur adipiscing elit ",
+        resolution: "resolution of request.",
         likes: "222",
         commentCountNumber: "3",
       },
@@ -41,11 +42,11 @@ export default function AccountPage() {
     setPosts([
       {
         post: {
-          userProfilePicture: "pic",
-          userName: "test",
+          userProfilePicture: "photo",
+          userName: "username",
           content: postInput,
-          tag: "Lost Dog",
-          resolution: "Found!.",
+          tag: "Lorem ipsum dolor",
+          resolution: "Resolution of request.",
           likes: "222",
           commentCountNumber: "3",
         },
@@ -56,6 +57,7 @@ export default function AccountPage() {
 
   return (
     <div className='flex-col w-screen h-screen'>
+      <CustomGreeting />
       <div className=' flex w-screen h-screen  w-1'>
         <div className='md:w-1/3 h-full bg-purple-300 hidden'>Column 1</div>
         <div className='md:w-2/3  h-full  w-screen mx-1'>

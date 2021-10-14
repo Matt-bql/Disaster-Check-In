@@ -1,0 +1,45 @@
+{
+  "paths": [
+    {
+      "name": "/items",
+      "lambdaFunction": "disastercheckinlambda",
+      "privacy": {
+        "protected": true,
+        "auth": [
+          "/POST",
+          "/GET",
+          "/PUT",
+          "/PATCH",
+          "/DELETE"
+        ],
+        "unauth": [
+          "/GET"
+        ]
+      },
+      "policyResourceName": "/items"
+    }
+  ],
+  "resourceName": "apidisastercheckin",
+  "apiName": "apidisastercheckin",
+  "functionArns": [
+    {
+      "lambdaFunction": "disastercheckinlambda"
+    }
+  ],
+  "privacy": {
+    "auth": 1,
+    "unauth": 1,
+    "authRoleName": "amplify-disastercheckin-dev-94933-authRole",
+    "unAuthRoleName": "amplify-disastercheckin-dev-94933-unauthRole"
+  },
+  "dependsOn": [
+    {
+      "category": "function",
+      "resourceName": "disastercheckinlambda",
+      "attributes": [
+        "Name",
+        "Arn"
+      ]
+    }
+  ]
+}

@@ -54,7 +54,7 @@ export default function Header({ ...otherProps }) {
               </Link>
 
               <Link
-                to='/my-account'
+                to='/user-page'
                 className='list-none md:mr-5 flex w-full text-base uppercase hover:text-red-600 cursor-pointer
                 pt-2.5 px-2.5'
               >

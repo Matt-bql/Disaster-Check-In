@@ -20,6 +20,12 @@
       },
       "auth": {
         "disastercheckin": {}
+      },
+      "function": {
+        "disastercheckinlambda": {
+          "deploymentBucketName": "amplify-disastercheckin-dev-94933-deployment",
+          "s3Key": "amplify-builds/disastercheckinlambda-79337a78356d6677307a-build.zip"
+        }
       }
     }
   }

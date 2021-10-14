@@ -1,0 +1,5 @@
+{
+    "tableName": "disastercheckindb",
+    "partitionKeyName": "id",
+    "partitionKeyType": "S"
+}

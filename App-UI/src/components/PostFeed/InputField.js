@@ -10,11 +10,13 @@ export default function InputField({
   return (
     <div>
       {!isClicked ? (
-        <input
+        <button
           onClick={() => setIsClicked(true)}
           placeholder='Click here to make a post.'
-          className='flex my-2 w-60 h-14 rounded-lg'
-        />
+          className='flex bg-white my-2 rounded-lg'
+        >
+          add post
+        </button>
       ) : (
         <div className='mb-3'>
           <input

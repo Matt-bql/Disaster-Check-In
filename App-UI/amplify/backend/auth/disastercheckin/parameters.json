@@ -1,6 +1,6 @@
 {
     "identityPoolName": "disastercheckin_identity_pool",
-    "allowUnauthenticatedIdentities": false,
+    "allowUnauthenticatedIdentities": true,
     "resourceNameTruncated": "disastc7de5ea9",
     "userPoolName": "disastercheckin_user_pool",
     "autoVerifiedAttributes": [
