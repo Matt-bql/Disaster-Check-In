@@ -7,7 +7,7 @@ import {
   AmplifyGreetings,
 } from "@aws-amplify/ui-react";
 import { AuthState, onAuthUIStateChange } from "@aws-amplify/ui-components";
-import awsconfig from "./../../aws-exports";
+import awsconfig from "../../aws-exports";
 
 Amplify.configure(awsconfig);
 

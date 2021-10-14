@@ -13,15 +13,10 @@ export default function InputField({
         <button
           onClick={() => setIsClicked(true)}
           placeholder='Click here to make a post.'
-<<<<<<< HEAD
           className='flex bg-white my-2 rounded-lg'
         >
           add post
         </button>
-=======
-          className='flex my-2 w-full h-14 rounded-lg border-black border-2'
-        />
->>>>>>> 7321fa255812772ff9b7ede9095279d57cf296e8
       ) : (
         <div className='mb-3 '>
           <input

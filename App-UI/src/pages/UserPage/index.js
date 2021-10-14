@@ -1,25 +1,14 @@
 import React, { useState } from "react";
 import PostFeed from "../../components/PostFeed";
 import InputField from "../../components/PostFeed/InputField";
-<<<<<<< HEAD
 import CustomGreeting from "../../components/CustomGreeting";
-=======
-import { v4 as uuid } from "uuid";
->>>>>>> 7321fa255812772ff9b7ede9095279d57cf296e8
 
 export default function AccountPage() {
   const [posts, setPosts] = useState([
     {
       post: {
-<<<<<<< HEAD
         userProfilePicture: "photo",
         userName: "username",
-=======
-        id: uuid(),
-        userWhoPosted: "",
-        userProfilePicture: "pic",
-        userName: "test",
->>>>>>> 7321fa255812772ff9b7ede9095279d57cf296e8
         content:
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et ",
         tag: "Lorem ipsum dolor Lorem ipsum dolor",
@@ -30,15 +19,8 @@ export default function AccountPage() {
     },
     {
       post: {
-<<<<<<< HEAD
         userProfilePicture: "photo",
         userName: "username",
-=======
-        id: uuid(),
-        userWhoPosted: "",
-        userProfilePicture: "pic",
-        userName: "test",
->>>>>>> 7321fa255812772ff9b7ede9095279d57cf296e8
         content: "need food",
         tag: "Lorem ipsum dolor sit amet, consectetur adipiscing elit ",
         resolution: "resolution of request.",
@@ -60,15 +42,8 @@ export default function AccountPage() {
     setPosts([
       {
         post: {
-<<<<<<< HEAD
           userProfilePicture: "photo",
           userName: "username",
-=======
-          id: uuid(),
-          userWhoPosted: "",
-          userProfilePicture: "pic",
-          userName: "test",
->>>>>>> 7321fa255812772ff9b7ede9095279d57cf296e8
           content: postInput,
           tag: "Lorem ipsum dolor",
           resolution: "Resolution of request.",
