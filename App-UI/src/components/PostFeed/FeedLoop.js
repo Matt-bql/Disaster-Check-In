@@ -3,7 +3,7 @@ import React from "react";
 export default function FeedLoop({ item }) {
   const name = "name";
   return (
-    <div className='flex mb-3 h-full border hover:border-hover-color border-no-hover-color  bg-white cursor-pointer sm:rounded-md'>
+    <div className='flex mb-2 h-full border hover:border-hover-color border-no-hover-color  bg-white cursor-pointer sm:rounded-md'>
       <div className='flex-column my-1 mx-1 px-1 w-full h-full'>
         <div className='flex '>
           <div>PIC</div>

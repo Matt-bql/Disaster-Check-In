@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 import Amplify from "aws-amplify";
 import {
@@ -23,12 +24,15 @@ const AuthStateApp = () => {
   }, []);
 
   return authState === AuthState.SignedIn && user ? (
-    <div className='App '>
-      {/* <AmplifyGreetings></AmplifyGreetings> */}
-      <div className='text-white'>Hello, {user.username}</div>
-    </div>
+    <AmplifySignOut></AmplifySignOut>
   ) : (
-    <div></div>
+    <Link
+      to='/user-page'
+      className='list-none md:mr-5 flex w-full text-base uppercase hover:text-red-600 cursor-pointer
+                pt-2.5 px-2.5'
+    >
+      Login/Signup
+    </Link>
   );
 };
 export default AuthStateApp;

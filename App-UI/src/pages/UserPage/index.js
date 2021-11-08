@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import PostFeed from "../../components/PostFeed";
 import InputField from "../../components/PostFeed/InputField";
 import CustomGreeting from "../../components/CustomGreeting";
+import HeaderLoggedIn from "../../components/Header/HeaderLoggedIn";
 
 export default function AccountPage() {
   const [posts, setPosts] = useState([
@@ -57,8 +58,22 @@ export default function AccountPage() {
   console.log(posts);
   return (
     <div className='flex-col w-screen h-screen '>
-      <div className=' flex w-screen h-full  '>
-        <div className='w:2/3  h-full  sm:mx-6   '>
+      <HeaderLoggedIn />
+      <div className='  lg:w-1/3 h-full right float-right hidden lg:block'>
+        <div className='h-96 mt-4 mx-6 border border-no-hover-color bg-white sm:rounded-md '>
+          4
+        </div>
+      </div>
+
+      <div className='flex lg:w-2/3 '>
+        <div className='h-16 my-4 border border-no-hover-color bg-white rounded-sm w-full sm:rounded-md sm:mx-6 lg:mx-0 lg:ml-6'>
+          1test
+        </div>
+        {/* <div className='hidden h-16 my-4 sm:w-1/3 lg:block'></div> */}
+      </div>
+
+      <div className=' flex lg:w-2/3 w-screen h-full '>
+        <div className='lg:w-full w-full h-full  sm:mx-6 lg:mx-0 lg:ml-6  '>
           {/* <div className='flex w-full justify-center items-center   '>
             <InputField
               buttonClickHandler={buttonClickHandler}
@@ -69,9 +84,6 @@ export default function AccountPage() {
             />
           </div> */}
           <PostFeed posts={posts} setPosts={setPosts} />
-        </div>
-        <div className='md:w-1/3  h-full bg-purple-800 hidden lg:block'>
-          Column 2
         </div>
       </div>
     </div>

@@ -3,7 +3,8 @@ import { BrowserRouter as Router, Link } from "react-router-dom";
 import { AmplifySignOut, AmplifyGreetings } from "@aws-amplify/ui-react";
 import CustomGreeting from "./../CustomGreeting";
 import SignoutButtonConditional from "./../../components/CustomGreeting/SignoutButtonConditional";
-export default function Header() {
+
+export default function HeaderLoggedIn() {
   const [active, setActive] = useState(false);
   function onClickHandler() {
     setActive(!active);
@@ -15,6 +16,8 @@ export default function Header() {
         <div className='max-w-7xl mx-auto flex items-center justify-between'>
           <div className='w-14'>Logo</div>
           <CustomGreeting />
+
+          <button className='mr-5'>img</button>
           <div
             onClick={onClickHandler}
             className={`
@@ -23,6 +26,7 @@ export default function Header() {
           >
             Menu
           </div>
+
           {/* <AmplifyGreetings></AmplifyGreetings> */}
           <nav
             className={`${!active && "hidden"}
@@ -38,7 +42,6 @@ export default function Header() {
               >
                 feedback
               </Link>
-
               <Link
                 to='/'
                 className='list-none md:mr-5 flex w-full text-base uppercase hover:text-red-600 cursor-pointer
@@ -46,7 +49,6 @@ export default function Header() {
               >
                 Home
               </Link>
-
               <Link
                 to='/About'
                 className='list-none md:mr-5 flex w-full text-base uppercase hover:text-red-600 cursor-pointer
@@ -54,14 +56,15 @@ export default function Header() {
               >
                 About
               </Link>
-              <SignoutButtonConditional />
-              {/* <Link
-                to='/user-page'
+              <Link
+                to='/user-account'
                 className='list-none md:mr-5 flex w-full text-base uppercase hover:text-red-600 cursor-pointer
                 pt-2.5 px-2.5'
               >
-                Signup/Login
-              </Link> */}
+                My Account
+              </Link>
+
+              <SignoutButtonConditional />
             </ul>
           </nav>
         </div>

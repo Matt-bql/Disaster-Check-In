@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Header from "../../components/Header";
 import Cards from "./../../components/Cards";
 import { Link } from "react-router-dom";
 import hero from "./../../assets/hero.jpg";
@@ -8,11 +9,12 @@ export default function HomePage() {
 
   return (
     <div>
+      <Header />
       <div className='min-h-full bg-gray-100 font-body'>
         <div className='h-screen flex flex-col '>
           <div
             className=' relative flex items-center justify-center h-full 
-          bg-cover bg-center bg-fixed bg-no-repeat '
+          bg-cover bg-center bg-fixed '
             style={{ backgroundImage: `url(${hero})` }}
           >
             {/* Look in to this. */}
