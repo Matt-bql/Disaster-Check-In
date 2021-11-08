@@ -56,12 +56,10 @@ export default function AccountPage() {
   }
   console.log(posts);
   return (
-    <div className='flex-col w-screen h-screen'>
-      <CustomGreeting />
-      <div className=' flex w-screen h-screen  w-1'>
-        <div className='md:w-1/3 h-full bg-purple-300 hidden'>Column 1</div>
-        <div className='md:w-2/3  h-full  w-screen mx-1'>
-          <div className='flex w-full justify-center items-center   '>
+    <div className='flex-col w-screen h-screen '>
+      <div className=' flex w-screen h-full  '>
+        <div className='w:2/3  h-full  sm:mx-6   '>
+          {/* <div className='flex w-full justify-center items-center   '>
             <InputField
               buttonClickHandler={buttonClickHandler}
               isClicked={isClicked}
@@ -69,10 +67,12 @@ export default function AccountPage() {
               setPostInput={setPostInput}
               postInput={postInput}
             />
-          </div>
+          </div> */}
           <PostFeed posts={posts} setPosts={setPosts} />
         </div>
-        <div className='md:w-1/3  h-full bg-purple-800 hidden'>Column 3</div>
+        <div className='md:w-1/3  h-full bg-purple-800 hidden lg:block'>
+          Column 2
+        </div>
       </div>
     </div>
   );

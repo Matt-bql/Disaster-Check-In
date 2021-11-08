@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import { BrowserRouter as Router, Link } from "react-router-dom";
-import { AmplifySignOut } from "@aws-amplify/ui-react";
+import { AmplifySignOut, AmplifyGreetings } from "@aws-amplify/ui-react";
+import CustomGreeting from "./../CustomGreeting";
 
-export default function Header({ ...otherProps }) {
+export default function Header() {
   const [active, setActive] = useState(false);
   function onClickHandler() {
     setActive(!active);
@@ -10,9 +11,10 @@ export default function Header({ ...otherProps }) {
 
   return (
     <>
-      <div className='relative p-2.5 '>
+      <div className='relative p-2.5 text-white bg-header-primary-color'>
         <div className='max-w-7xl mx-auto flex items-center justify-between'>
           <div className='w-14'>Logo</div>
+          <CustomGreeting />
           <div
             onClick={onClickHandler}
             className={`
@@ -21,7 +23,7 @@ export default function Header({ ...otherProps }) {
           >
             Menu
           </div>
-
+          {/* <AmplifyGreetings></AmplifyGreetings> */}
           <nav
             className={`${!active && "hidden"}
             absolute flex flex-col bg-white top-full w-full left-0 z-20

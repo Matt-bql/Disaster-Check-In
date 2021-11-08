@@ -52,8 +52,10 @@ function App() {
               slot='confirm-sign-up'
             ></AmplifyConfirmSignUp>
             <AmplifySignIn slot='sign-in' usernameAlias='username' />
-            <Route path='/user-page' exact component={UserPage} />
-            <Route path='/my-account' exact component={UserAccount} />
+            <div className='bg-primary-bg'>
+              <Route path='/user-page' exact component={UserPage} />
+              <Route path='/my-account' exact component={UserAccount} />
+            </div>
           </AmplifyAuthenticator>
         </Switch>
         <Footer />
