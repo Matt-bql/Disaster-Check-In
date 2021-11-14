@@ -1,9 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
+import Modal from "./Modal";
 
 export default function FeedLoop({ item }) {
   const name = "name";
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   return (
-    <div className='flex mb-2 h-full border hover:border-hover-color border-no-hover-color  bg-white cursor-pointer sm:rounded-md'>
+    <div
+      onClick={() => setIsModalOpen(true)}
+      className='flex mb-2 h-full border hover:border-hover-color border-no-hover-color  bg-white cursor-pointer sm:rounded-md'
+    >
       <div className='flex-column my-1 mx-1 px-1 w-full h-full'>
         <div className='flex '>
           <div>PIC</div>
@@ -22,6 +28,11 @@ export default function FeedLoop({ item }) {
           <p className=''>tag</p>
         </div>
       </div>
+      {isModalOpen && (
+        <Modal open={isModalOpen} setIsModalOpen={setIsModalOpen}>
+          {item.content}
+        </Modal>
+      )}
     </div>
   );
 }

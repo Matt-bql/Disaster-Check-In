@@ -24,7 +24,9 @@ const AuthStateApp = () => {
   }, []);
 
   return authState === AuthState.SignedIn && user ? (
-    <AmplifySignOut></AmplifySignOut>
+    <button className='bg-gray-600'>
+      <AmplifySignOut></AmplifySignOut>
+    </button>
   ) : (
     <Link
       to='/user-page'

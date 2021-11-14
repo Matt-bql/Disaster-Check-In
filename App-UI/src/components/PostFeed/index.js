@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import FeedLoop from "./FeedLoop";
 
-export default function PostFeed({ isClicked, posts, setPosts }) {
+export default function PostFeed({ posts, setPosts }) {
   return (
     <div>
       {posts.map(item => {
