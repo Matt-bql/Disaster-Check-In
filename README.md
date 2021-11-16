@@ -1,20 +1,29 @@
-![Current Disaster-Check-in](https://user-images.githubusercontent.com/26662557/130001279-822d49b4-7855-44e2-b9a9-2f14c876f809.gif)
+![Current Disaster-Check-in](https://imgur.com/g7x5EWq)
 
-# Lean-Coffee
-This is my Lean Coffee app. The layout is inspired by several apps on the market but all of the code is my own. Nothing is copy/pasted.
+# Disaster Check-In
+This is an app currently in progress that will provide victims of natural disasters to login and checkin with friends and family.
+It is inspired by living in an area experiencing yearly hurricanes that disrupt the area.
+Nothing is copy/pasted.
 
-# Currently implementing serverless functions using AWS Lambda
-This project is used to further solidify my knowledge in designing and creating fullstack apps. 
+# Login/Logout Functionality
+https://imgur.com/Sxu3ZMX
+https://imgur.com/Sxu3ZMX
 
+As seen in the GIF above, users can login and view posts only visible to users. 
+The posts are expandable, disabling scrolling of the window when open, and enables users to click outside to exit the modal. (will be adding exit button soon)
+
+# Responsiveness
+https://imgur.com/uQOk31B
+
+Accessibility with different devices is key, which is why I have a close focus on how my app reacts on devices of all sizes.
+
+# This app uses various technologies below.
 
 REACT
-* axios
 * router
-* context
 
-NODEJS
-* express
-* dotenv
+AWS
+* Amplify- for user authentication(user pools/cognito)
+* Amplify uses other AWS technologies such as Lambda, S3, DynamoDB and others which I use.
 
-Styling
-* SASS
+Tailwind
