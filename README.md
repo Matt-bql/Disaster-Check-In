@@ -1,20 +1,20 @@
-Disaster Check-in
+![Current Disaster-Check-in](https://user-images.githubusercontent.com/26662557/130001279-822d49b4-7855-44e2-b9a9-2f14c876f809.gif)
 
-This is an app for checking in on friends and family during natural disasters. I thought of this app after realizing how many of my own family stress to stay in contact with each other every hurricane season.
+# Lean-Coffee
+This is my Lean Coffee app. The layout is inspired by several apps on the market but all of the code is my own. Nothing is copy/pasted.
 
-This is an ongoing project and is in the early stages.
+# Currently implementing serverless functions using AWS Lambda
+This project is used to further solidify my knowledge in designing and creating fullstack apps. 
 
-This app uses: 
 
 REACT
-React Router
-UUID
+* axios
+* router
+* context
 
-AWS specific tech, deployed using the CLI to keep all services in sync.
-Amplify
-Cognito
-S3
-Lambda
-CloudFormation
+NODEJS
+* express
+* dotenv
 
-Styling was done using Tailwind.
+Styling
+* SASS
