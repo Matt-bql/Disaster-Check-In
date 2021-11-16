@@ -10,14 +10,16 @@ Nothing is copy/pasted.
 ![DC-Home-Login-Logout](https://user-images.githubusercontent.com/26662557/142017914-aa3a6add-46eb-4ac9-b765-5f4c783ae31c.gif)
 
 
-As seen in the GIF above, users can login and view posts only visible to users. 
+As seen in the GIF's below, users can login and view posts only visible to users. 
 The posts are expandable, disabling scrolling of the window when open, and enables users to click outside to exit the modal. (will be adding exit button soon)
 
 # Responsiveness
+Accessibility with different devices is key, which is why I have a close focus on how my app reacts on devices of all sizes.
+
 ![DC-Responsive](https://user-images.githubusercontent.com/26662557/142017944-58152d03-097f-40d0-9fc1-57b4dee8c393.gif)
 
 
-Accessibility with different devices is key, which is why I have a close focus on how my app reacts on devices of all sizes.
+
 
 # This app uses various technologies below.
 
