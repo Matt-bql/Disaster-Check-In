@@ -7,7 +7,7 @@ Nothing is copy/pasted.
 
 # Login/Logout Functionality
 As seen in the GIF's below, users can login and view posts only visible to users. 
-The posts are expandable, disabling scrolling of the window when open, and enables users to click outside to exit the modal. (will be adding exit button soon)
+The posts are expandable, disabling scrolling of the window when open while allowing users to scroll within the modal itself, and enables users to click outside to exit the modal. (will be adding exit button soon)
 
 ![DC-expandpost](https://user-images.githubusercontent.com/26662557/142017911-ccb64e37-41ce-4552-a020-ce3d92f82dbf.gif)
 ![DC-Home-Login-Logout](https://user-images.githubusercontent.com/26662557/142017914-aa3a6add-46eb-4ac9-b765-5f4c783ae31c.gif)
