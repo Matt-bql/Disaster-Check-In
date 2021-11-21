@@ -28,11 +28,13 @@ export default function FeedLoop({ item }) {
           <p className=''>tag</p>
         </div>
       </div>
-      {isModalOpen && (
-        <Modal open={isModalOpen} setIsModalOpen={setIsModalOpen}>
-          {item.content}
-        </Modal>
-      )}
+      <div>
+        {isModalOpen && (
+          <Modal open={isModalOpen} setIsModalOpen={setIsModalOpen}>
+            {item.content}
+          </Modal>
+        )}
+      </div>
     </div>
   );
 }

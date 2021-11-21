@@ -4,7 +4,6 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import HomePage from "./pages/HomePage";
 import SignupPage from "./pages/Signup-Page";
 //Components
-import Header from "./components/Header";
 import Footer from "./components/Footer";
 import UserAccount from "./pages/UserAccount";
 import UserPage from "./pages/UserPage";
@@ -14,11 +13,8 @@ import awsconfig from "./aws-exports";
 import {
   AmplifySignUp,
   AmplifySignIn,
-  AmplifySignOut,
   AmplifyConfirmSignUp,
-  withAuthenticator,
   AmplifyAuthenticator,
-  AmplifyGreetings,
 } from "@aws-amplify/ui-react";
 Amplify.configure(awsconfig);
 

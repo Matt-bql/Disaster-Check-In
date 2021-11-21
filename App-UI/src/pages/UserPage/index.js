@@ -1,10 +1,11 @@
 import React, { useState } from "react";
 import PostFeed from "../../components/PostFeed";
-import InputField from "../../components/PostFeed/InputField";
-import CustomGreeting from "../../components/CustomGreeting";
 import HeaderLoggedIn from "../../components/Header/HeaderLoggedIn";
+import APICalls from "../../components/APICalls/APICalls";
 
 export default function AccountPage() {
+  const [buttonn, setButtonn] = useState(false);
+
   const [posts, setPosts] = useState([
     {
       post: {
@@ -68,6 +69,14 @@ export default function AccountPage() {
       <div className='flex lg:w-2/3 '>
         <div className='h-16 my-4 border border-no-hover-color bg-white rounded-sm w-full sm:rounded-md sm:mx-6 lg:mx-0 lg:ml-6'>
           1test
+          <button
+            onClick={() => {
+              setButtonn(true);
+            }}
+          >
+            asdfasdfasd
+          </button>
+          {buttonn && <APICalls />}
         </div>
         {/* <div className='hidden h-16 my-4 sm:w-1/3 lg:block'></div> */}
       </div>
