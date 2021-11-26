@@ -1,6 +1,5 @@
 import React, { useState } from "react";
-import { BrowserRouter as Router, Link } from "react-router-dom";
-import { AmplifySignOut, AmplifyGreetings } from "@aws-amplify/ui-react";
+import { Link } from "react-router-dom";
 import CustomGreeting from "./../CustomGreeting";
 import SignoutButtonConditional from "./../../components/CustomGreeting/SignoutButtonConditional";
 
@@ -29,11 +28,11 @@ export default function HeaderLoggedIn() {
         {/* <AmplifyGreetings></AmplifyGreetings> */}
         <nav
           className={`${!active && "hidden"}
-             absolute flex flex-col  top-full left-0 z-20
+             absolute flex flex-col  top-full right-0 z-20
           md:static md:w-auto md:flex-row md:flex  bg-header-primary-color
           `}
         >
-          <ul className='md:flex-row md:flex content-around'>
+          <ul className='md:flex-row  md:flex content-around'>
             <Link
               to='/feedback'
               className='list-none md:mr-5 flex w-full text-sm uppercase  hover:text-red-600 cursor-pointer

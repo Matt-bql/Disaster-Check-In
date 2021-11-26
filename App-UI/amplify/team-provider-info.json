@@ -20,6 +20,16 @@
       },
       "auth": {
         "disastercheckine81f3f36": {}
+      },
+      "function": {
+        "AdminQueriescf988aa4": {
+          "deploymentBucketName": "amplify-disastercheckin-dev-125254-deployment",
+          "s3Key": "amplify-builds/AdminQueriescf988aa4-6b2b4172706862764a66-build.zip"
+        },
+        "disasterFunction": {
+          "deploymentBucketName": "amplify-disastercheckin-dev-125254-deployment",
+          "s3Key": "amplify-builds/disasterFunction-4b43374f573556635650-build.zip"
+        }
       }
     }
   }

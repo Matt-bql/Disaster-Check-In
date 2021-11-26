@@ -1,6 +1,6 @@
 {
     "identityPoolName": "disastercheckine81f3f36_identitypool_e81f3f36",
-    "allowUnauthenticatedIdentities": false,
+    "allowUnauthenticatedIdentities": true,
     "resourceNameTruncated": "disaste81f3f36",
     "userPoolName": "disastercheckine81f3f36_userpool_e81f3f36",
     "autoVerifiedAttributes": [
@@ -46,9 +46,23 @@
             "Arn"
         ]
     },
-    "useDefault": "default",
-    "userPoolGroupList": [],
+    "useDefault": "manual",
+    "userPoolGroupList": [
+        "disastercheckinusers"
+    ],
     "serviceName": "Cognito",
     "usernameCaseSensitive": false,
-    "dependsOn": []
+    "dependsOn": [],
+    "thirdPartyAuth": false,
+    "userPoolGroups": true,
+    "adminQueries": true,
+    "triggers": "{}",
+    "hostedUI": false,
+    "adminQueryGroup": "admin",
+    "parentStack": {
+        "Ref": "AWS::StackId"
+    },
+    "breakCircularDependency": true,
+    "permissions": [],
+    "authProviders": []
 }

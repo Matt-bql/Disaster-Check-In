@@ -5,7 +5,6 @@ import HomePage from "./pages/HomePage";
 import SignupPage from "./pages/Signup-Page";
 //Components
 import Footer from "./components/Footer";
-import UserAccount from "./pages/UserAccount";
 import UserPage from "./pages/UserPage";
 //Amplify
 import Amplify from "aws-amplify";
@@ -49,7 +48,7 @@ function App() {
             <AmplifySignIn slot='sign-in' usernameAlias='username' />
             <div className='bg-primary-bg'>
               <Route path='/user-page' exact component={UserPage} />
-              <Route path='/my-account' exact component={UserAccount} />
+              {/* <Route path='/my-account' exact component={UserAccount} /> */}
             </div>
           </AmplifyAuthenticator>
         </Switch>

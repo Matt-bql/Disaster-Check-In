@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import FeedLoop from "./FeedLoop";
 
 export default function PostFeed({ posts, setPosts }) {

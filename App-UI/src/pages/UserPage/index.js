@@ -31,31 +31,30 @@ export default function AccountPage() {
       },
     },
   ]);
-  const [isClicked, setIsClicked] = useState(false);
-  const [postInput, setPostInput] = useState("");
-  console.log(postInput);
+  // const [postInput, setPostInput] = useState("");
+  // console.log(postInput);
 
-  function buttonClickHandler() {
-    console.log("clicked");
-    if (postInput === "") {
-      return alert("Input cannot be empty");
-    }
-    setPostInput("");
-    setPosts([
-      {
-        post: {
-          userProfilePicture: "photo",
-          userName: "username",
-          content: postInput,
-          tag: "Lorem ipsum dolor",
-          resolution: "Resolution of request.",
-          likes: "222",
-          commentCountNumber: "3",
-        },
-      },
-      ...posts,
-    ]);
-  }
+  // function buttonClickHandler() {
+  //   console.log("clicked");
+  //   if (postInput === "") {
+  //     return alert("Input cannot be empty");
+  //   }
+  //   setPostInput("");
+  //   setPosts([
+  //     {
+  //       post: {
+  //         userProfilePicture: "photo",
+  //         userName: "username",
+  //         content: postInput,
+  //         tag: "Lorem ipsum dolor",
+  //         resolution: "Resolution of request.",
+  //         likes: "222",
+  //         commentCountNumber: "3",
+  //       },
+  //     },
+  //     ...posts,
+  //   ]);
+  // }
   console.log(posts);
   return (
     <div className='flex-col w-screen h-screen '>

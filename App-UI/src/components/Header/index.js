@@ -1,6 +1,5 @@
 import React, { useState } from "react";
-import { BrowserRouter as Router, Link } from "react-router-dom";
-import { AmplifySignOut, AmplifyGreetings } from "@aws-amplify/ui-react";
+import { Link } from "react-router-dom";
 import CustomGreeting from "./../CustomGreeting";
 import SignoutButtonConditional from "./../../components/CustomGreeting/SignoutButtonConditional";
 export default function Header() {

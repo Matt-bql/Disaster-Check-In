@@ -1,5 +1,4 @@
 import React, { useEffect, useRef, useLayoutEffect } from "react";
-import PostModalContent from "./PostModalContent";
 
 export default function Modal({ open, setIsModalOpen, children }) {
   const node = useRef();
