@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 import Amplify from "aws-amplify";
 import // AmplifyAuthenticator,
@@ -14,20 +14,17 @@ const AuthStateApp = () => {
   const [authState, setAuthState] = useState();
   const [user, setUser] = useState();
 
-  React.useEffect(() => {
+  useEffect(() => {
     return onAuthUIStateChange((nextAuthState, authData) => {
       setAuthState(nextAuthState);
       setUser(authData);
     });
-  }, []);
+  }, [authState, user]);
 
   return authState === AuthState.SignedIn && user ? (
     <div className='App '>
-      {/* <AmplifyGreetings></AmplifyGreetings> */}
       <div className='text-white'>Hello, {user.username}</div>
     </div>
-  ) : (
-    <div></div>
-  );
+  ) : null;
 };
 export default AuthStateApp;

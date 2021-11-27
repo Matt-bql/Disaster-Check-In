@@ -1,7 +1,0 @@
-{
-    "tableName": "disasterDB",
-    "partitionKeyName": "id",
-    "partitionKeyType": "S",
-    "sortKeyName": "postedBy",
-    "sortKeyType": "S"
-}

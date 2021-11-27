@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { BrowserRouter as Link } from "react-router-dom";
 
 import SignoutLogic from "./SignoutLogic";
@@ -15,7 +15,7 @@ const AuthStateApp = () => {
   const [authState, setAuthState] = useState();
   const [user, setUser] = useState();
 
-  React.useEffect(() => {
+  useEffect(() => {
     return onAuthUIStateChange((nextAuthState, authData) => {
       setAuthState(nextAuthState);
       setUser(authData);
@@ -31,13 +31,12 @@ const AuthStateApp = () => {
       SignOut
     </button>
   ) : (
-    <Link
-      to='/user-page'
-      className='list-none md:mr-5 flex w-full text-sm uppercase hover:text-red-600 cursor-pointer
-                pt-2.5 px-2.5'
+    <button
+      className='list-none md:mr-5 flex w-full text-base uppercase hover:text-red-600 cursor-pointer
+      pt-2.5 px-2.5'
     >
-      Login/Signup
-    </Link>
+      <Link to='/user-page'>Login</Link>
+    </button>
   );
 };
 export default AuthStateApp;

@@ -13,7 +13,7 @@ export default function APICalls() {
 
   useEffect(() => {
     try {
-      API.get("disasterApi", "/posts/id").then(res => console.log("ello", res));
+      API.get("disapi", "/posts/").then(res => console.log("ello", res));
     } catch (err) {
       console.log(err);
     }
@@ -37,19 +37,6 @@ export default function APICalls() {
       },
     };
     return await API.post(apiName, path, myInit);
-    // e.preventDefault();
-    // try {
-    //   API.post("disasterApi", "/posts", {
-    //     body: {
-    //       id: uuidv4(),
-    //       datePosted: Date.now(),
-    //       title: postTitle,
-    //       type: postBody,
-    //     },
-    //   });
-    // } catch (err) {
-    //   console.log(err);
-    // }
   }
 
   return (

@@ -1,36 +1,32 @@
 {
-  "dev": {
-    "awscloudformation": {
-      "AuthRoleName": "amplify-disastercheckin-dev-125254-authRole",
-      "UnauthRoleArn": "arn:aws:iam::428532364871:role/amplify-disastercheckin-dev-125254-unauthRole",
-      "AuthRoleArn": "arn:aws:iam::428532364871:role/amplify-disastercheckin-dev-125254-authRole",
-      "Region": "us-east-2",
-      "DeploymentBucketName": "amplify-disastercheckin-dev-125254-deployment",
-      "UnauthRoleName": "amplify-disastercheckin-dev-125254-unauthRole",
-      "StackName": "amplify-disastercheckin-dev-125254",
-      "StackId": "arn:aws:cloudformation:us-east-2:428532364871:stack/amplify-disastercheckin-dev-125254/3de36710-4afc-11ec-8568-0267b173ea5e",
-      "AmplifyAppId": "d370cfcf5m4kxx"
-    },
-    "categories": {
-      "hosting": {
-        "amplifyhosting": {
-          "appId": "d370cfcf5m4kxx",
-          "type": "manual"
-        }
-      },
-      "auth": {
-        "disastercheckine81f3f36": {}
-      },
-      "function": {
-        "AdminQueriescf988aa4": {
-          "deploymentBucketName": "amplify-disastercheckin-dev-125254-deployment",
-          "s3Key": "amplify-builds/AdminQueriescf988aa4-6b2b4172706862764a66-build.zip"
+    "dev": {
+        "awscloudformation": {
+            "AuthRoleName": "amplify-disapp-dev-93613-authRole",
+            "UnauthRoleArn": "arn:aws:iam::428532364871:role/amplify-disapp-dev-93613-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::428532364871:role/amplify-disapp-dev-93613-authRole",
+            "Region": "us-east-2",
+            "DeploymentBucketName": "amplify-disapp-dev-93613-deployment",
+            "UnauthRoleName": "amplify-disapp-dev-93613-unauthRole",
+            "StackName": "amplify-disapp-dev-93613",
+            "StackId": "arn:aws:cloudformation:us-east-2:428532364871:stack/amplify-disapp-dev-93613/c23238d0-4f97-11ec-9709-06aa052d8626",
+            "AmplifyAppId": "d1z3r41u0t86mk"
         },
-        "disasterFunction": {
-          "deploymentBucketName": "amplify-disastercheckin-dev-125254-deployment",
-          "s3Key": "amplify-builds/disasterFunction-4b43374f573556635650-build.zip"
+        "categories": {
+            "function": {
+                "disfunction": {
+                    "deploymentBucketName": "amplify-disapp-dev-93613-deployment",
+                    "s3Key": "amplify-builds/disfunction-486e4864693354735930-build.zip"
+                }
+            },
+            "auth": {
+                "cognito89aa7692": {}
+            },
+            "hosting": {
+                "amplifyhosting": {
+                    "appId": "d1z3r41u0t86mk",
+                    "type": "manual"
+                }
+            }
         }
-      }
     }
-  }
 }

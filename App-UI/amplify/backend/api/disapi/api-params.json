@@ -1,0 +1,43 @@
+{
+    "paths": [
+        {
+            "name": "/posts",
+            "lambdaFunction": "disfunction",
+            "privacy": {
+                "private": true,
+                "auth": [
+                    "/POST",
+                    "/GET",
+                    "/PUT",
+                    "/PATCH",
+                    "/DELETE"
+                ]
+            },
+            "policyResourceName": "/posts"
+        }
+    ],
+    "resourceName": "disapi",
+    "apiName": "disapi",
+    "functionArns": [
+        {
+            "lambdaFunction": "disfunction"
+        }
+    ],
+    "privacy": {
+        "auth": 1,
+        "unauth": 0,
+        "authRoleName": "amplify-disapp-dev-93613-authRole",
+        "unAuthRoleName": "amplify-disapp-dev-93613-unauthRole"
+    },
+    "dependsOn": [
+        {
+            "category": "function",
+            "resourceName": "disfunction",
+            "attributes": [
+                "Name",
+                "Arn"
+            ]
+        }
+    ],
+    "uuid": "19f34075"
+}

@@ -1,0 +1,5 @@
+{
+    "tableName": "disstore",
+    "partitionKeyName": "id",
+    "partitionKeyType": "S"
+}

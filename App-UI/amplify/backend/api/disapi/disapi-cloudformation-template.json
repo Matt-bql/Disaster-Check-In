@@ -8,15 +8,15 @@
         },
     
     
-          "functiondisasterFunctionName": {
+          "functiondisfunctionName": {
             "Type": "String",
-            "Default": "functiondisasterFunctionName"
+            "Default": "functiondisfunctionName"
           },
 
           
-          "functiondisasterFunctionArn": {
+          "functiondisfunctionArn": {
             "Type": "String",
-            "Default": "functiondisasterFunctionArn"
+            "Default": "functiondisfunctionArn"
           }
 
           
@@ -37,16 +37,16 @@
         
         
         
-      "disasterApi": {
+      "disapi": {
         "Type": "AWS::ApiGateway::RestApi",
         "Properties": {
           "Description": "",
-          "Name": "disasterApi",
+          "Name": "disapi",
           "Body": {
             "swagger": "2.0",
             "info": {
               "version": "2018-05-24T17:52:00Z",
-              "title": "disasterApi"
+              "title": "disapi"
             },
             "host": {
                 "Fn::Join": [
@@ -174,7 +174,7 @@
                             
                             {
 
-                                "Ref": "functiondisasterFunctionArn"
+                                "Ref": "functiondisfunctionArn"
                             },
                             
                             "/invocations"
@@ -279,7 +279,7 @@
                           
                           {
 
-                            "Ref": "functiondisasterFunctionArn"
+                            "Ref": "functiondisfunctionArn"
                           },
                           
                           "/invocations"
@@ -336,12 +336,12 @@
       
         
 
-        "functiondisasterFunctionPermissiondisasterApi": {
+        "functiondisfunctionPermissiondisapi": {
             "Type": "AWS::Lambda::Permission",
             "Properties": {
                 "FunctionName": 
                     {
-                        "Ref":  "functiondisasterFunctionName"
+                        "Ref":  "functiondisfunctionName"
                     },
                     
                     "Action": "lambda:InvokeFunction",
@@ -360,7 +360,7 @@
                             },
                             ":",
                             {
-                                "Ref": "disasterApi"
+                                "Ref": "disapi"
                             },
                             "/*/*/*"
                         ]
@@ -371,7 +371,7 @@
         
         
 
-      "DeploymentAPIGWdisasterApi": {
+      "DeploymentAPIGWdisapi19f34075": {
         "Type": "AWS::ApiGateway::Deployment",
         "Properties": {
           "Description": "The Development stage deployment of your API.",
@@ -385,7 +385,7 @@
             ]
           },
           "RestApiId": {
-            "Ref": "disasterApi"
+            "Ref": "disapi"
           }
         }
       }
@@ -393,15 +393,15 @@
     "Outputs": {
         "RootUrl": {
             "Description": "Root URL of the API gateway",
-            "Value": {"Fn::Join": ["", ["https://", {"Ref": "disasterApi"}, ".execute-api.", {"Ref": "AWS::Region"}, ".amazonaws.com/", {"Fn::If": ["ShouldNotCreateEnvResources","Prod", {"Ref": "env"} ]}]]}
+            "Value": {"Fn::Join": ["", ["https://", {"Ref": "disapi"}, ".execute-api.", {"Ref": "AWS::Region"}, ".amazonaws.com/", {"Fn::If": ["ShouldNotCreateEnvResources","Prod", {"Ref": "env"} ]}]]}
         },
         "ApiName": {
           "Description": "API Friendly name",
-          "Value": "disasterApi"
+          "Value": "disapi"
         },
         "ApiId": {
           "Description": "API ID (prefix of API URL)",
-          "Value": {"Ref": "disasterApi"}
+          "Value": {"Ref": "disapi"}
         }
     }
   }

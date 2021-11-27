@@ -1,17 +1,52 @@
 {
-  "hosting": {
-    "amplifyhosting": {
-      "service": "amplifyhosting",
+  "storage": {
+    "disstore": {
+      "service": "DynamoDB",
+      "providerPlugin": "awscloudformation"
+    }
+  },
+  "function": {
+    "disfunction": {
+      "build": true,
       "providerPlugin": "awscloudformation",
-      "type": "manual"
+      "service": "Lambda",
+      "dependsOn": [
+        {
+          "category": "storage",
+          "resourceName": "disstore",
+          "attributes": [
+            "Name",
+            "Arn"
+          ],
+          "attributeEnvMap": {
+            "Name": "TABLE_NAME",
+            "Arn": "TABLE_ARN"
+          }
+        }
+      ]
+    }
+  },
+  "api": {
+    "disapi": {
+      "service": "API Gateway",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [
+        {
+          "category": "function",
+          "resourceName": "disfunction",
+          "attributes": [
+            "Name",
+            "Arn"
+          ]
+        }
+      ]
     }
   },
   "auth": {
-    "disastercheckine81f3f36": {
+    "cognito89aa7692": {
       "service": "Cognito",
+      "serviceType": "managed",
       "providerPlugin": "awscloudformation",
-      "dependsOn": [],
-      "customAuth": false,
       "frontendAuthConfig": {
         "loginMechanisms": [
           "PREFERRED_USERNAME"
@@ -31,101 +66,13 @@
           "EMAIL"
         ]
       }
-    },
-    "userPoolGroups": {
-      "service": "Cognito-UserPool-Groups",
-      "providerPlugin": "awscloudformation",
-      "dependsOn": [
-        {
-          "category": "auth",
-          "resourceName": "disastercheckine81f3f36",
-          "attributes": [
-            "UserPoolId",
-            "AppClientIDWeb",
-            "AppClientID",
-            "IdentityPoolId"
-          ]
-        }
-      ]
     }
   },
-  "function": {
-    "AdminQueriescf988aa4": {
-      "service": "Lambda",
+  "hosting": {
+    "amplifyhosting": {
+      "service": "amplifyhosting",
       "providerPlugin": "awscloudformation",
-      "build": true,
-      "dependsOn": [
-        {
-          "category": "auth",
-          "resourceName": "disastercheckine81f3f36",
-          "attributes": [
-            "UserPoolId"
-          ]
-        }
-      ]
-    },
-    "disasterFunction": {
-      "build": true,
-      "providerPlugin": "awscloudformation",
-      "service": "Lambda",
-      "dependsOn": [
-        {
-          "category": "storage",
-          "resourceName": "disasterDB",
-          "attributes": [
-            "Name",
-            "Arn"
-          ],
-          "attributeEnvMap": {
-            "Name": "TABLE_NAME",
-            "Arn": "TABLE_ARN"
-          }
-        }
-      ]
-    }
-  },
-  "api": {
-    "AdminQueries": {
-      "service": "API Gateway",
-      "providerPlugin": "awscloudformation",
-      "authorizationType": "AMAZON_COGNITO_USER_POOLS",
-      "dependsOn": [
-        {
-          "category": "auth",
-          "resourceName": "disastercheckine81f3f36",
-          "attributes": [
-            "UserPoolId"
-          ]
-        },
-        {
-          "category": "function",
-          "resourceName": "AdminQueriescf988aa4",
-          "attributes": [
-            "Arn",
-            "Name"
-          ]
-        }
-      ]
-    },
-    "disasterApi": {
-      "service": "API Gateway",
-      "providerPlugin": "awscloudformation",
-      "dependsOn": [
-        {
-          "category": "function",
-          "resourceName": "disasterFunction",
-          "attributes": [
-            "Name",
-            "Arn"
-          ]
-        }
-      ]
-    }
-  },
-  "storage": {
-    "disasterDB": {
-      "service": "DynamoDB",
-      "providerPlugin": "awscloudformation"
+      "type": "manual"
     }
   }
 }
