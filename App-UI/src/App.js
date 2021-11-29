@@ -3,9 +3,9 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 // Pages
 import HomePage from "./pages/HomePage";
 import SignupPage from "./pages/Signup-Page";
+import MemberFeedPage from "./pages/MemberFeedPage";
 //Components
-import Footer from "./components/Footer";
-import UserPage from "./pages/UserPage";
+// import Footer from "./components/Footer";
 //Amplify
 import Amplify from "aws-amplify";
 import awsconfig from "./aws-exports";
@@ -47,12 +47,10 @@ function App() {
             ></AmplifyConfirmSignUp>
             <AmplifySignIn slot='sign-in' usernameAlias='username' />
             <div className='bg-primary-bg'>
-              <Route path='/user-page' exact component={UserPage} />
-              {/* <Route path='/my-account' exact component={UserAccount} /> */}
+              <Route path='/user-page' exact component={MemberFeedPage} />
             </div>
           </AmplifyAuthenticator>
         </Switch>
-        <Footer />
       </Router>
     </div>
   );

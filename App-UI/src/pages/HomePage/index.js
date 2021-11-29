@@ -1,6 +1,6 @@
 import React from "react";
 import Header from "../../components/Header";
-import Cards from "./../../components/Cards";
+import Cards from "../../components/Cards";
 import { Link } from "react-router-dom";
 import hero from "./../../assets/hero.jpg";
 
