@@ -1,7 +1,9 @@
+// Hooks
 import React, { useState } from "react";
+// Components
 import Modal from "./Modal/Modal.js";
 
-export default function PostFeed({ postedBy, id, post, isWaiting }) {
+export default function PostFeed({ postedBy, post, isWaiting, datePosted }) {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   return (
@@ -14,13 +16,23 @@ export default function PostFeed({ postedBy, id, post, isWaiting }) {
           <div className='flex px-4 py-1'>
             <img className='w-10 h-10 rounded-full mr-4' src='' alt='' />
             <div>
+              {/* items-baseline IS AWESOME!!! */}
               <p className='flex items-baseline'>
-                <span className='mr-2  text-color-small-text font-sans font-base text-xs sm:block'>
+                <span className='text-color-small-text font-sans font-base font-medium text-sm sm:block mr-2'>
                   {postedBy}
                 </span>
-                <span className='text-xs font-sans font-base '>12/07/2021</span>
+                <span className='text-xs font-sans font-medium'>
+                  {datePosted}
+                </span>
               </p>
-              <p className=''>{post.body}</p>
+              <p className='flex-auto flex-grow font-sans text- font-normal leading-tight my-2'>
+                {post.body}
+              </p>
+              <p className='text-color-small-text font-bold text-xs'>
+                <span>cmnt#</span>
+                <span>tag</span>
+                <span>location</span>
+              </p>
             </div>
           </div>
         </div>
@@ -43,7 +55,7 @@ export default function PostFeed({ postedBy, id, post, isWaiting }) {
         //     {post.body}
         //   </p>
 
-        //   <div className='flex  text-color-small-text font-bold text-xs justify-evenly'>
+        //   <div className='flex   font-bold text-xs justify-evenly'>
         //     <p>Location</p>
 
         //     <p>cmnt#</p>

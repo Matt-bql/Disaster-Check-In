@@ -46,7 +46,7 @@ export default function MemberFeedPage() {
         const myInit = {
           body: {
             id: uuidv4(),
-            timePosted: Date.now(),
+            datePosted: new Date().toLocaleDateString(),
             postedBy: username,
             body: postBody,
           },
@@ -64,7 +64,7 @@ export default function MemberFeedPage() {
 
   return (
     <div className='flex-col w-screen min-h-screen '>
-      <div className='  lg:w-1/3 h-full right float-right hidden lg:block'>
+      <div className='lg:w-1/3 h-full right float-right hidden lg:block'>
         <div className='h-96 mt-4 mx-6 border border-no-hover-color bg-white sm:rounded-md '>
           4
         </div>

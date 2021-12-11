@@ -12,6 +12,7 @@ export default function PostFeedLoop({ posts, isWaiting }) {
             postedBy={post.postedBy}
             post={post}
             isWaiting={isWaiting}
+            datePosted={post.datePosted}
           />
         );
       })}
