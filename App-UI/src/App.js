@@ -5,7 +5,7 @@ import HomePage from "./pages/HomePage";
 import SignupPage from "./pages/Signup-Page";
 import MemberFeedPage from "./pages/MemberFeedPage";
 //Components
-// import Footer from "./components/Footer";
+import Header from "./components/Header/Header";
 //Amplify
 import Amplify from "aws-amplify";
 import awsconfig from "./aws-exports";
@@ -21,6 +21,7 @@ function App() {
   return (
     <div>
       <Router>
+        <Header />
         <Switch>
           <Route path='/' exact component={HomePage} />
           <Route path='/create-account' exact component={SignupPage} />

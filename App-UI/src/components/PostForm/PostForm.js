@@ -1,19 +1,8 @@
 import React from "react";
 
-export default function PostForm({
-  submitPostHandler,
-  postTitle,
-  setPostTitle,
-  postBody,
-  setPostBody,
-}) {
+export default function PostForm({ submitPostHandler, postBody, setPostBody }) {
   return (
     <form onSubmit={submitPostHandler}>
-      <input
-        value={postTitle}
-        placeholder='Post Title'
-        onChange={e => setPostTitle(e.target.value)}
-      ></input>
       <input
         value={postBody}
         placeholder='Post Content'
