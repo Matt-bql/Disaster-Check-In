@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useLayoutEffect } from "react";
 
-export default function Modal({ open, setIsModalOpen, post }) {
+export default function Modal({ setIsModalOpen, post }) {
   const node = useRef();
 
   // * The code below enables us to click outside of the modal to close it.
@@ -39,7 +39,7 @@ export default function Modal({ open, setIsModalOpen, post }) {
         ref={node}
         className='flex-column bg-white h-full  w-11/12 mt-12 rounded-lg   fixed z-50 mb-4 '
       >
-        <button className=' pr-2 ' onClick={() => setIsModalOpen(false)}>
+        <button className='pr-2' onClick={() => setIsModalOpen(false)}>
           X
         </button>
         <div className='flex'>
@@ -48,10 +48,9 @@ export default function Modal({ open, setIsModalOpen, post }) {
             {/* Posted by {postedBy} */}
           </p>
         </div>
-
-        <p className='flex-auto flex-grow w-full py-2 px-2 mt-4 bg-gray-200 font-sans font-medium text-lg leading-tight '>
+        {/* <p className='flex-auto flex-grow w-full py-2 px-2 mt-4 bg-gray-200 font-sans font-medium text-lg leading-tight '>
           {post.title}
-        </p>
+        </p> */}
         <p className='flex-auto flex-grow p-2 font-sans text-base text-md font-normal leading-tight mt-2'>
           {post.body}
         </p>

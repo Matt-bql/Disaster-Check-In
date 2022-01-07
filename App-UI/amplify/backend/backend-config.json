@@ -3,6 +3,10 @@
     "disstore": {
       "service": "DynamoDB",
       "providerPlugin": "awscloudformation"
+    },
+    "disimages": {
+      "service": "S3",
+      "providerPlugin": "awscloudformation"
     }
   },
   "function": {

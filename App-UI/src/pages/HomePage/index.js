@@ -1,6 +1,10 @@
+// Hooks
 import React from "react";
+// Components
 import Cards from "../../components/Cards";
+//Libraries
 import { Link } from "react-router-dom";
+// Assets
 import hero from "./../../assets/hero.jpg";
 
 export default function HomePage() {

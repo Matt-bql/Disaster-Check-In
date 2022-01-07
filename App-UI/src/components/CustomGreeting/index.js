@@ -1,10 +1,7 @@
 import React, { useState, useEffect } from "react";
 
 import Amplify from "aws-amplify";
-import // AmplifyAuthenticator,
-// AmplifySignOut,
-// AmplifyGreetings,
-"@aws-amplify/ui-react";
+import "@aws-amplify/ui-react";
 import { AuthState, onAuthUIStateChange } from "@aws-amplify/ui-components";
 import awsconfig from "../../aws-exports";
 

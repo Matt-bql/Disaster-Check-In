@@ -5,7 +5,10 @@ import Modal from "./Modal/Modal.js";
 
 export default function PostFeed({ postedBy, post, isWaiting, datePosted }) {
   const [isModalOpen, setIsModalOpen] = useState(false);
-
+  function setClosed() {
+    setIsModalOpen(false);
+    console.log("boop");
+  }
   return (
     <div
       onClick={() => setIsModalOpen(true)}
@@ -14,7 +17,11 @@ export default function PostFeed({ postedBy, post, isWaiting, datePosted }) {
       {!isWaiting ? (
         <div className='flex-column my-1 mx-1 px-1 w-full h-full'>
           <div className='flex px-4 py-1'>
-            <img className='w-10 h-10 rounded-full mr-4' src='' alt='' />
+            <img
+              className='w-10 h-10 rounded-full mr-4'
+              src='App-UI/src/assets/hero.jpg'
+              alt='profile'
+            />
             <div>
               {/* items-baseline IS AWESOME!!! */}
               <p className='flex items-baseline'>
@@ -37,42 +44,15 @@ export default function PostFeed({ postedBy, post, isWaiting, datePosted }) {
           </div>
         </div>
       ) : (
-        // <div className='flex-column my-1 mx-1 px-1 w-full h-full'>
-        //   <div className='flex-column '>
-        //     <div className='flex'>
-        //       {/* <div>PIC</div> */}
-        //       <p className='text-color-small-text font-sans font-base font-medium text-xs sm:block'>
-        //         Posted by {postedBy}
-        //       </p>
-        //     </div>
-
-        //     <h2 className='flex-auto flex-grow  font-sans font-medium text-lg leading-tight mt-2'>
-        //       {post.title}
-        //     </h2>
-        //   </div>
-
-        //   <p className='flex-auto flex-grow  font-sans text-base text-md font-normal leading-tight mt-2'>
-        //     {post.body}
-        //   </p>
-
-        //   <div className='flex   font-bold text-xs justify-evenly'>
-        //     <p>Location</p>
-
-        //     <p>cmnt#</p>
-        //     <p className=''>tag</p>
-        //   </div>
-        // </div>
         <div>Fetching Posts...</div>
       )}
-      <div>
-        {isModalOpen && (
-          <Modal
-            open={isModalOpen}
-            setIsModalOpen={setIsModalOpen}
-            post={post}
-          ></Modal>
-        )}
-      </div>
+      {isModalOpen && (
+        <Modal
+          setIsModalOpen={setIsModalOpen}
+          post={post}
+          setClosed={setClosed}
+        ></Modal>
+      )}
     </div>
   );
 }

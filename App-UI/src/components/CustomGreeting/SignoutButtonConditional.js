@@ -1,10 +1,12 @@
+// Hooks
 import React, { useState, useEffect } from "react";
-import { BrowserRouter as Link } from "react-router-dom";
-
+//Components
 import SignoutLogic from "./SignoutLogic";
-
+// Libraries
+import { Link } from "react-router-dom";
 import Amplify from "aws-amplify";
-import {} from "@aws-amplify/ui-react";
+//AWS
+// import {} from "@aws-amplify/ui-react";
 import { AuthState, onAuthUIStateChange } from "@aws-amplify/ui-components";
 import awsconfig from "../../aws-exports";
 
@@ -23,27 +25,25 @@ const AuthStateApp = () => {
   }, []);
 
   return authState === AuthState.SignedIn && user ? (
-    <ul className='flex w-full bg-gray-600 mr-5'>
-      <Link
-        to='/'
-        className=' flex text-base  hover:text-red-600 cursor-pointer'
-      >
+    <div className='flex w-full items-baseline'>
+      <Link to='/' className='text-base hover:text-red-600 cursor-pointer '>
         Home
       </Link>
       <button
-        className='  flex text-base  hover:text-red-600 cursor-pointer'
+        className='text-base  hover:text-red-600 cursor-pointer '
         onClick={SignoutLogic}
       >
         SignOut
       </button>
-    </ul>
+    </div>
   ) : (
-    <button
+    <Link
+      to='/user-page'
       className='list-none md:mr-5 flex w-full text-base uppercase hover:text-red-600 cursor-pointer
       pt-2.5 px-2.5'
     >
-      <Link to='/user-page'>Login</Link>
-    </button>
+      Login
+    </Link>
   );
 };
 export default AuthStateApp;
