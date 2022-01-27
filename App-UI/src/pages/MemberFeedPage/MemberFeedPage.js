@@ -43,14 +43,13 @@ export default function MemberFeedPage() {
   }
 
   async function submitPostHandler(e) {
+    e.preventDefault();
     if (postBody === "") {
-      alert("Fields cannot be empty.");
-      return;
+      return alert("Fields cannot be empty.");
     } else {
       try {
         setIsWaiting(true);
         const { username } = await Auth.currentAuthenticatedUser();
-        e.preventDefault();
 
         const apiName = "disapi";
         const path = "/posts/";
@@ -81,26 +80,26 @@ export default function MemberFeedPage() {
         </div>
       </div>
       <div className='flex lg:w-2/3 '>
-        <div className='flex h-12 my-4 place-items-center border-no-hover-color bg-white rounded-sm w-full border sm:rounded-md sm:mx-6 lg:mx-0 lg:ml-6'>
-          <span className='w-1/4'>
-            <img
+        <div className='flex h-16 my-4 place-items-center border-no-hover-color bg-white rounded-sm w-full border sm:rounded-md sm:mx-6 lg:mx-0 lg:ml-6'>
+          <span className='w-1/3 '>
+            {/* <img
               className=' h-10 rounded-full mr-4 inline-block'
-              src='App-UI/src/assets/hero.jpg'
+              src='App-UI/src/assets/hero.webp'
               alt='profile'
-            />
+            /> */}
           </span>
-          <span className='flex w-3/4 h-full place-items-center'>
+          <span className='flex w-4/5 h-full place-items-center'>
             <PostForm
               submitPostHandler={submitPostHandler}
               postBody={postBody}
               setPostBody={setPostBody}
             />
           </span>
-          <button className='border-2 w-1/4 '>Link</button>
+          <span className='w-1/3'></span>
         </div>
       </div>
-      <div className=' flex lg:w-2/3 w-screen h-full '>
-        <div className='lg:w-full w-full h-full  sm:mx-6 lg:mx-0 lg:ml-6  '>
+      <div className='flex w-full lg:w-2/3 h-full '>
+        <div className='h-full w-full sm:mx-6 lg:ml-6 lg:mr-0'>
           <PostFeedLoop isWaiting={isWaiting} posts={posts} />
         </div>
       </div>

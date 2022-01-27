@@ -1,5 +1,5 @@
 import React from "react";
-import sunset from "./../../assets/sunset.jpg";
+import sunset from "./../../assets/sunset.webp";
 
 export default function Cards({ ...otherProps }) {
   return (

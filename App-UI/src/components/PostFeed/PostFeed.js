@@ -19,7 +19,7 @@ export default function PostFeed({ postedBy, post, isWaiting, datePosted }) {
           <div className='flex px-4 py-1'>
             <img
               className='w-10 h-10 rounded-full mr-4'
-              src='App-UI/src/assets/hero.jpg'
+              src='App-UI/src/assets/hero.webp'
               alt='profile'
             />
             <div>

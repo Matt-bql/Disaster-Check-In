@@ -5,7 +5,7 @@ import Cards from "../../components/Cards";
 //Libraries
 import { Link } from "react-router-dom";
 // Assets
-import hero from "./../../assets/hero.jpg";
+import hero from "./../../assets/hero.webp";
 
 export default function HomePage() {
   const heading = "When Disasters Happen...";
