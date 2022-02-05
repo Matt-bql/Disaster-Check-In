@@ -17,12 +17,12 @@ export default function PostFeed({
     console.log("boop");
   }
   return (
-    <div
-      onClick={() => setIsModalOpen(true)}
-      className='border-no-hover-color hover:border-hover-color mb-2 flex h-full cursor-pointer  border bg-white sm:rounded-md'
-    >
+    <div className='border-no-hover-color hover:border-hover-color mb-2 flex h-full cursor-pointer  border bg-white sm:rounded-md'>
       {!isWaiting ? (
-        <div className='flex-column my-1  mx-1 h-full w-full px-1'>
+        <div
+          onClick={() => setIsModalOpen(true)}
+          className='flex-column my-1  mx-1 h-full w-full px-1'
+        >
           <div className='flex px-4 py-1'>
             <img
               className='mr-4 h-10 w-10 rounded-full'
@@ -56,6 +56,7 @@ export default function PostFeed({
       {isModalOpen && (
         <Modal
           setIsModalOpen={setIsModalOpen}
+          isModalOpen={isModalOpen}
           post={post}
           setClosed={setClosed}
           currentUserData={currentUserData}

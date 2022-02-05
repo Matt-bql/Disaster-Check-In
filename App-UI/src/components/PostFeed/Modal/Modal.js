@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef, useLayoutEffect } from "react";
 
 export default function Modal({
   setIsModalOpen,
+  isModalOpen,
   post,
   currentUserData,
   deletePostHandler,
@@ -25,7 +26,7 @@ export default function Modal({
       return;
     }
     // outside click
-    setIsModalOpen(false);
+    setIsModalOpen(!isModalOpen);
   };
 
   // * The code below disables scrolling of document when modal is open.
@@ -46,7 +47,7 @@ export default function Modal({
         ref={node}
         className='flex-column fixed z-50  mt-12 mb-4 h-full   w-11/12 rounded-lg bg-white '
       >
-        <button className='pr-2' onClick={() => setIsModalOpen(false)}>
+        <button className='pr-2' onClick={() => setIsModalOpen(!isModalOpen)}>
           X
         </button>
 
@@ -62,10 +63,13 @@ export default function Modal({
                 >
                   yes
                 </p>
-                <p onClick={() => setDelButtonClicked(false)}>no</p>
+                <p onClick={() => setDelButtonClicked(!delButtonClicked)}>no</p>
               </div>
             ) : (
-              <button onClick={() => setDelButtonClicked(true)}>
+              <button
+                className='border-2 p-2'
+                onClick={() => setDelButtonClicked(!delButtonClicked)}
+              >
                 delete post
               </button>
             )}
