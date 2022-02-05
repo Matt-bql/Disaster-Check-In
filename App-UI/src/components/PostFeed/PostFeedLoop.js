@@ -4,7 +4,7 @@ import PostFeed from "./PostFeed";
 export default function PostFeedLoop({ posts, isWaiting }) {
   return (
     <div>
-      {posts.map(post => {
+      {posts.map((post) => {
         return (
           <PostFeed
             key={post.id}

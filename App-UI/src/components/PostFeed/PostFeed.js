@@ -12,30 +12,30 @@ export default function PostFeed({ postedBy, post, isWaiting, datePosted }) {
   return (
     <div
       onClick={() => setIsModalOpen(true)}
-      className='flex mb-2 h-full border hover:border-hover-color border-no-hover-color  bg-white cursor-pointer sm:rounded-md'
+      className='border-no-hover-color hover:border-hover-color mb-2 flex h-full cursor-pointer  border bg-white sm:rounded-md'
     >
       {!isWaiting ? (
-        <div className='flex-column my-1 mx-1 px-1 w-full h-full'>
+        <div className='flex-column my-1  mx-1 h-full w-full px-1'>
           <div className='flex px-4 py-1'>
             <img
-              className='w-10 h-10 rounded-full mr-4'
+              className='mr-4 h-10 w-10 rounded-full'
               src='App-UI/src/assets/hero.webp'
               alt='profile'
             />
             <div>
               {/* items-baseline IS AWESOME!!! */}
               <p className='flex items-baseline'>
-                <span className='text-color-small-text font-sans font-base font-medium text-sm sm:block mr-2'>
+                <span className='font-base text-color-small-text mr-2 font-sans text-sm font-medium sm:block'>
                   {postedBy}
                 </span>
-                <span className='text-xs font-sans font-medium'>
+                <span className='font-sans text-xs font-medium'>
                   {datePosted}
                 </span>
               </p>
-              <p className='flex-auto flex-grow font-sans text- font-normal leading-tight my-2'>
+              <p className='text- my-2 flex-auto flex-grow font-sans font-normal leading-tight'>
                 {post.body}
               </p>
-              <p className='text-color-small-text font-bold text-xs'>
+              <p className='text-color-small-text text-xs font-bold'>
                 <span>cmnt#</span>
                 <span>tag</span>
                 <span>location</span>

@@ -25,12 +25,12 @@ const AuthStateApp = () => {
   }, []);
 
   return authState === AuthState.SignedIn && user ? (
-    <div className='flex w-full items-baseline'>
-      <Link to='/' className='text-base hover:text-red-600 cursor-pointer '>
+    <div className="flex w-full items-baseline">
+      <Link to="/" className="cursor-pointer text-base hover:text-red-600 ">
         Home
       </Link>
       <button
-        className='text-base  hover:text-red-600 cursor-pointer '
+        className="cursor-pointer  text-base hover:text-red-600 "
         onClick={SignoutLogic}
       >
         SignOut
@@ -38,9 +38,9 @@ const AuthStateApp = () => {
     </div>
   ) : (
     <Link
-      to='/user-page'
-      className='list-none md:mr-5 flex w-full text-base uppercase hover:text-red-600 cursor-pointer
-      pt-2.5 px-2.5'
+      to="/user-page"
+      className="flex w-full cursor-pointer list-none px-2.5 pt-2.5 text-base uppercase
+      hover:text-red-600 md:mr-5"
     >
       Login
     </Link>

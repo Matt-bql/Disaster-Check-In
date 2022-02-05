@@ -13,7 +13,7 @@ export default function UploadImage() {
         `userimages/${this.upload.files[0].name}`,
         this.upload.files[0],
         { contentType: this.upload.files[0].type }
-      ).then(result => {
+      ).then((result) => {
         this.upload = null;
         setResponse(this.upload.files[0].type);
       });
@@ -26,19 +26,19 @@ export default function UploadImage() {
     <div>
       <h2>hello</h2>
       <input
-        type='file'
-        accept='image/png, image/jped'
-        ref={ref => (this.upload = ref)}
-        onChange={e =>
+        type="file"
+        accept="image/png, image/jped"
+        ref={(ref) => (this.upload = ref)}
+        onChange={(e) =>
           setImageFile(
             this.upload.files[0],
             setImageName(this.upload.files[0].name)
           )
         }
       />
-      <input value={imageName} placeholder='Select file' />
+      <input value={imageName} placeholder="Select file" />
       <button
-        onClick={e => {
+        onClick={(e) => {
           this.upload.value = null;
           this.upload.click();
         }}

@@ -21,13 +21,13 @@ function App() {
     <div>
       <Router>
         <Header />
-        <Route path='/' exact component={HomePage} />
-        <Route path='/feedback' />
-        <Route path='/about' />
+        <Route path="/" exact component={HomePage} />
+        <Route path="/feedback" />
+        <Route path="/about" />
 
         <AmplifyAuthenticator>
           <AmplifySignUp
-            slot='sign-up'
+            slot="sign-up"
             formFields={[
               { type: "username" },
               // {
@@ -40,8 +40,8 @@ function App() {
             ]}
           />
           <AmplifyConfirmSignUp
-            headerText='See Email For Confirmation Code'
-            slot='confirm-sign-up'
+            headerText="See Email For Confirmation Code"
+            slot="confirm-sign-up"
             formFields={[
               { type: "username" },
               {
@@ -52,8 +52,8 @@ function App() {
             ]}
           ></AmplifyConfirmSignUp>
           {/* <AmplifySignIn slot='sign-in' usernameAlias='username' /> */}
-          <div className='bg-primary-bg'>
-            <Route path='/user-page' exact component={MemberFeedPage} />
+          <div className="bg-primary-bg">
+            <Route path="/user-page" exact component={MemberFeedPage} />
           </div>
         </AmplifyAuthenticator>
       </Router>

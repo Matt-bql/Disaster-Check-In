@@ -12,7 +12,7 @@ export default function Modal({ setIsModalOpen, post }) {
     };
   }, []);
 
-  const handleClick = e => {
+  const handleClick = (e) => {
     if (node.current.contains(e.target)) {
       // inside click
       return;
@@ -34,24 +34,24 @@ export default function Modal({ setIsModalOpen, post }) {
   })();
 
   return (
-    <div className='flex justify-center fixed inset-0 bg-opacity-50 z-9 bg-black h-full cursor-default'>
+    <div className="z-9 fixed inset-0 flex h-full cursor-default justify-center bg-black bg-opacity-50">
       <div
         ref={node}
-        className='flex-column bg-white h-full  w-11/12 mt-12 rounded-lg   fixed z-50 mb-4 '
+        className="flex-column fixed z-50  mt-12 mb-4 h-full   w-11/12 rounded-lg bg-white "
       >
-        <button className='pr-2' onClick={() => setIsModalOpen(false)}>
+        <button className="pr-2" onClick={() => setIsModalOpen(false)}>
           X
         </button>
-        <div className='flex'>
+        <div className="flex">
           {/* <div>PIC</div> */}
-          <p className='text-color-small-text font-sans font-base font-medium text-xs sm:block'>
+          <p className="font-base font-sans text-xs font-medium text-color-small-text sm:block">
             {/* Posted by {postedBy} */}
           </p>
         </div>
         {/* <p className='flex-auto flex-grow w-full py-2 px-2 mt-4 bg-gray-200 font-sans font-medium text-lg leading-tight '>
           {post.title}
         </p> */}
-        <p className='flex-auto flex-grow p-2 font-sans text-base text-md font-normal leading-tight mt-2'>
+        <p className="text-md mt-2 flex-auto flex-grow p-2 font-sans text-base font-normal leading-tight">
           {post.body}
         </p>
       </div>

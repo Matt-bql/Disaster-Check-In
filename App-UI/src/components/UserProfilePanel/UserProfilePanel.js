@@ -32,17 +32,17 @@ export default function UserProfilePanel() {
   return (
     <div>
       <input
-        type='file'
-        accept='image/png, image/jpeg'
-        onChange={e => onChangeHandler(e)}
+        type="file"
+        accept="image/png, image/jpeg"
+        onChange={(e) => onChangeHandler(e)}
       />
       <div>
         <button onClick={listFiles}>List Files</button>
       </div>
-      {files.map(file => (
+      {files.map((file) => (
         <p onClick={() => selectFile(file)}>{file.key}</p>
       ))}
-      {file && <img src={file} alt='' style={{ width: 300 }} />}
+      {file && <img src={file} alt="" style={{ width: 300 }} />}
     </div>
   );
 }

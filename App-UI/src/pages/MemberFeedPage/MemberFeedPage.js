@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 // Components
 import PostFeedLoop from "../../components/PostFeed/PostFeedLoop";
 import PostForm from "../../components/PostForm/PostForm";
-import UserProfilePanel from "../../components/UserProfilePanel/UserProfilePanel";
+// import UserProfilePanel from "../../components/UserProfilePanel/UserProfilePanel";
 // Libraries
 // import { v4 as uuidv4 } from "uuid";
 import Amplify, { API, Auth } from "aws-amplify";
@@ -73,33 +73,33 @@ export default function MemberFeedPage() {
   }
 
   return (
-    <div className='flex-col w-screen min-h-screen '>
-      <div className='lg:w-1/3 h-full right float-right hidden lg:block'>
-        <div className='h-96 mt-4 mx-6 border border-no-hover-color bg-white sm:rounded-md '>
+    <div className="min-h-screen w-screen flex-col ">
+      <div className="right float-right hidden h-full lg:block lg:w-1/3">
+        <div className="mx-6 mt-4 h-96 border border-no-hover-color bg-white sm:rounded-md ">
           {/* <UserProfilePanel /> */}
         </div>
       </div>
-      <div className='flex lg:w-2/3 '>
-        <div className='flex h-16 my-4 place-items-center border-no-hover-color bg-white rounded-sm w-full border sm:rounded-md sm:mx-6 lg:mx-0 lg:ml-6'>
-          <span className='w-1/3 '>
+      <div className="flex lg:w-2/3 ">
+        <div className="my-4 flex h-16 w-full place-items-center rounded-sm border border-no-hover-color bg-white sm:mx-6 sm:rounded-md lg:mx-0 lg:ml-6">
+          <span className="w-1/3 ">
             {/* <img
               className=' h-10 rounded-full mr-4 inline-block'
               src='App-UI/src/assets/hero.webp'
               alt='profile'
             /> */}
           </span>
-          <span className='flex w-4/5 h-full place-items-center'>
+          <span className="flex h-full w-4/5 place-items-center">
             <PostForm
               submitPostHandler={submitPostHandler}
               postBody={postBody}
               setPostBody={setPostBody}
             />
           </span>
-          <span className='w-1/3'></span>
+          <span className="w-1/3"></span>
         </div>
       </div>
-      <div className='flex w-full lg:w-2/3 h-full '>
-        <div className='h-full w-full sm:mx-6 lg:ml-6 lg:mr-0'>
+      <div className="flex h-full w-full lg:w-2/3 ">
+        <div className="h-full w-full sm:mx-6 lg:ml-6 lg:mr-0">
           <PostFeedLoop isWaiting={isWaiting} posts={posts} />
         </div>
       </div>

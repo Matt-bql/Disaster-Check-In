@@ -19,8 +19,8 @@ const AuthStateApp = () => {
   }, [authState, user]);
 
   return authState === AuthState.SignedIn && user ? (
-    <div className='App '>
-      <div className='text-white'>Hello, {user.username}</div>
+    <div className="App ">
+      <div className="text-white">Hello, {user.username}</div>
     </div>
   ) : null;
 };
