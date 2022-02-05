@@ -14,7 +14,6 @@ export default function PostFeedLoop({
           <PostFeed
             key={post.id}
             id={post.id}
-            postedBy={post.postedBy}
             post={post}
             isWaiting={isWaiting}
             datePosted={post.datePosted}

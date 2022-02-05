@@ -76,7 +76,7 @@ export default function MemberFeedPage() {
     }
   }
 
-  function deletePostHandler(id) {
+  async function deletePostHandler(id) {
     try {
       const apiName = "disapi";
       const path = "/posts/object/" + id;
@@ -85,7 +85,7 @@ export default function MemberFeedPage() {
           headers: {},
         },
       };
-      API.del(apiName, path, myInit);
+      await API.del(apiName, path, myInit);
     } catch (err) {
       console.log(err);
     } finally {

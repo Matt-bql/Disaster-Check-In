@@ -1,10 +1,9 @@
 // Hooks
 import React, { useState } from "react";
 // Components
-import Modal from "./Modal/Modal.js";
-
+import PostModal from "./PostModal/PostModal";
+import Modal from "../Modal";
 export default function PostFeed({
-  postedBy,
   post,
   isWaiting,
   datePosted,
@@ -33,7 +32,7 @@ export default function PostFeed({
               {/* items-baseline IS AWESOME!!! */}
               <p className='flex items-baseline'>
                 <span className='font-base text-color-small-text mr-2 font-sans text-sm font-medium sm:block'>
-                  {postedBy}
+                  {post.postedBy}
                 </span>
                 <span className='font-sans text-xs font-medium'>
                   {datePosted}
@@ -54,14 +53,16 @@ export default function PostFeed({
         <div>Fetching Posts...</div>
       )}
       {isModalOpen && (
-        <Modal
-          setIsModalOpen={setIsModalOpen}
-          isModalOpen={isModalOpen}
-          post={post}
-          setClosed={setClosed}
-          currentUserData={currentUserData}
-          deletePostHandler={deletePostHandler}
-        ></Modal>
+        <Modal setIsModalOpen={setIsModalOpen} isModalOpen={isModalOpen}>
+          <PostModal
+            post={post}
+            setClosed={setClosed}
+            currentUserData={currentUserData}
+            deletePostHandler={deletePostHandler}
+            setIsModalOpen={setIsModalOpen}
+            isModalOpen={isModalOpen}
+          ></PostModal>
+        </Modal>
       )}
     </div>
   );
