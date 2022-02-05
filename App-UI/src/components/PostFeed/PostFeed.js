@@ -3,7 +3,14 @@ import React, { useState } from "react";
 // Components
 import Modal from "./Modal/Modal.js";
 
-export default function PostFeed({ postedBy, post, isWaiting, datePosted }) {
+export default function PostFeed({
+  postedBy,
+  post,
+  isWaiting,
+  datePosted,
+  currentUserData,
+  deletePostHandler,
+}) {
   const [isModalOpen, setIsModalOpen] = useState(false);
   function setClosed() {
     setIsModalOpen(false);
@@ -51,6 +58,8 @@ export default function PostFeed({ postedBy, post, isWaiting, datePosted }) {
           setIsModalOpen={setIsModalOpen}
           post={post}
           setClosed={setClosed}
+          currentUserData={currentUserData}
+          deletePostHandler={deletePostHandler}
         ></Modal>
       )}
     </div>

@@ -1,10 +1,15 @@
 import React from "react";
 import PostFeed from "./PostFeed";
 
-export default function PostFeedLoop({ posts, isWaiting }) {
+export default function PostFeedLoop({
+  posts,
+  isWaiting,
+  deletePostHandler,
+  currentUserData,
+}) {
   return (
     <div>
-      {posts.map((post) => {
+      {posts.map(post => {
         return (
           <PostFeed
             key={post.id}
@@ -13,6 +18,8 @@ export default function PostFeedLoop({ posts, isWaiting }) {
             post={post}
             isWaiting={isWaiting}
             datePosted={post.datePosted}
+            deletePostHandler={deletePostHandler}
+            currentUserData={currentUserData}
           />
         );
       })}

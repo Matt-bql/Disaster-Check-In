@@ -16,11 +16,16 @@ export default function MemberFeedPage() {
   const [postBody, setPostBody] = useState("");
   const [posts, setPosts] = useState([]);
   const [isWaiting, setIsWaiting] = useState(false);
-
+  const [currentUserData, setCurrentUserData] = useState("");
   useEffect(() => {
     getPosts();
+    getAuthUserData();
   }, []);
 
+  async function getAuthUserData() {
+    const userData = await Auth.currentAuthenticatedUser();
+    setCurrentUserData(userData);
+  }
   // Sorting posts by time posted.
   function compare(a, b) {
     // const copyy = [...posts]
@@ -49,7 +54,6 @@ export default function MemberFeedPage() {
     } else {
       try {
         setIsWaiting(true);
-        const { username } = await Auth.currentAuthenticatedUser();
 
         const apiName = "disapi";
         const path = "/posts/";
@@ -57,7 +61,7 @@ export default function MemberFeedPage() {
           body: {
             id: Date.now().toLocaleString(),
             datePosted: new Date().toLocaleDateString(),
-            postedBy: username,
+            postedBy: currentUserData.username,
             body: postBody,
           },
         };
@@ -72,35 +76,57 @@ export default function MemberFeedPage() {
     }
   }
 
+  function deletePostHandler(id) {
+    try {
+      const apiName = "disapi";
+      const path = "/posts/object/" + id;
+      const myInit = {
+        body: {
+          headers: {},
+        },
+      };
+      API.del(apiName, path, myInit);
+    } catch (err) {
+      console.log(err);
+    } finally {
+      getPosts();
+    }
+  }
+
   return (
-    <div className="min-h-screen w-screen flex-col ">
-      <div className="right float-right hidden h-full lg:block lg:w-1/3">
-        <div className="mx-6 mt-4 h-96 border border-no-hover-color bg-white sm:rounded-md ">
+    <div className='min-h-screen w-screen flex-col '>
+      <div className='right float-right hidden h-full lg:block lg:w-1/3'>
+        <div className='border-no-hover-color mx-6 mt-4 h-96 border bg-white sm:rounded-md '>
           {/* <UserProfilePanel /> */}
         </div>
       </div>
-      <div className="flex lg:w-2/3 ">
-        <div className="my-4 flex h-16 w-full place-items-center rounded-sm border border-no-hover-color bg-white sm:mx-6 sm:rounded-md lg:mx-0 lg:ml-6">
-          <span className="w-1/3 ">
+      <div className='flex lg:w-2/3 '>
+        <div className='border-no-hover-color my-4 flex h-16 w-full place-items-center rounded-sm border bg-white sm:mx-6 sm:rounded-md lg:mx-0 lg:ml-6'>
+          <span className='w-1/3 '>
             {/* <img
               className=' h-10 rounded-full mr-4 inline-block'
               src='App-UI/src/assets/hero.webp'
               alt='profile'
             /> */}
           </span>
-          <span className="flex h-full w-4/5 place-items-center">
+          <span className='flex h-full w-4/5 place-items-center'>
             <PostForm
               submitPostHandler={submitPostHandler}
               postBody={postBody}
               setPostBody={setPostBody}
             />
           </span>
-          <span className="w-1/3"></span>
+          <span className='w-1/3'></span>
         </div>
       </div>
-      <div className="flex h-full w-full lg:w-2/3 ">
-        <div className="h-full w-full sm:mx-6 lg:ml-6 lg:mr-0">
-          <PostFeedLoop isWaiting={isWaiting} posts={posts} />
+      <div className='flex h-full w-full lg:w-2/3 '>
+        <div className='h-full w-full sm:mx-6 lg:ml-6 lg:mr-0'>
+          <PostFeedLoop
+            isWaiting={isWaiting}
+            posts={posts}
+            currentUserData={currentUserData}
+            deletePostHandler={deletePostHandler}
+          />
         </div>
       </div>
     </div>
