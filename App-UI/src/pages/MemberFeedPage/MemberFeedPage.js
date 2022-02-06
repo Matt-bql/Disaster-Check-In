@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 // Components
 import PostFeedLoop from "../../components/PostFeed/PostFeedLoop";
 import PostForm from "../../components/PostForm/PostForm";
-// import UserProfilePanel from "../../components/UserProfilePanel/UserProfilePanel";
+import UserProfilePanel from "../../components/UserProfilePanel/UserProfilePanel";
 // Libraries
 // import { v4 as uuidv4 } from "uuid";
 import Amplify, { API, Auth } from "aws-amplify";
@@ -97,7 +97,7 @@ export default function MemberFeedPage() {
     <div className='min-h-screen w-screen flex-col '>
       <div className='right float-right hidden h-full lg:block lg:w-1/3'>
         <div className='border-no-hover-color mx-6 mt-4 h-96 border bg-white sm:rounded-md '>
-          {/* <UserProfilePanel /> */}
+          <UserProfilePanel />
         </div>
       </div>
       <div className='flex lg:w-2/3 '>
