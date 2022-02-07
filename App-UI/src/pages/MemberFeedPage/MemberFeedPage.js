@@ -45,9 +45,7 @@ export default function MemberFeedPage() {
       console.log(err);
     }
   }
-  function getPostsOptimisticaly() {
-    const newArr = [{}, ...posts];
-  }
+
   async function submitPostHandler(e) {
     e.preventDefault();
     if (postBody === "") {
