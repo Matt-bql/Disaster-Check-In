@@ -13,14 +13,15 @@ export default function UserProfilePanel() {
   }, []);
 
   async function getAuthUserData() {
-    const userData = await Auth.currentUserInfo();
-    setUser(userData);
+    const { attributes } = await Auth.currentAuthenticatedUser();
+    setUser(attributes);
   }
   console.log(user);
   return (
     <div>
-      {/* {user.attributes.name}
-      {user.attributes.email} */}
+      <p>{user.name}</p>
+      <p>{user.email}</p>
+      {/* <p>{user.email_verified}</p> */}
     </div>
   );
 }

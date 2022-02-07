@@ -39,22 +39,22 @@ export default function MemberFeedPage() {
       setIsWaiting(true);
       const postsFetch = await API.get("disapi", "/posts/");
       const postsSort = postsFetch.sort(compare);
-
       setPosts(postsSort);
       setIsWaiting(false);
     } catch (err) {
       console.log(err);
     }
   }
-
+  function getPostsOptimisticaly() {
+    const newArr = [{}, ...posts];
+  }
   async function submitPostHandler(e) {
     e.preventDefault();
     if (postBody === "") {
       return alert("Fields cannot be empty.");
     } else {
       try {
-        setIsWaiting(true);
-
+        // API load for DB.
         const apiName = "disapi";
         const path = "/posts/";
         const myInit = {
@@ -65,19 +65,23 @@ export default function MemberFeedPage() {
             body: postBody,
           },
         };
+
+        // Implementing optimistic UI for faster response.
+        const newArr = [myInit.body, ...posts];
+        setPosts(newArr);
         setPostBody("");
+
+        // Posting to DB
         await API.post(apiName, path, myInit);
-        setIsWaiting(false);
       } catch (err) {
         console.log("error submitting post to database.", err);
-      } finally {
-        getPosts();
       }
     }
   }
 
   async function deletePostHandler(id) {
     try {
+      //API load for DB
       const apiName = "disapi";
       const path = "/posts/object/" + id;
       const myInit = {
@@ -85,16 +89,22 @@ export default function MemberFeedPage() {
           headers: {},
         },
       };
+
+      // Implementing optimistic UI for faster response.
+      const newArr = posts.filter(post => {
+        return post.id !== id;
+      });
+      setPosts(newArr);
+
+      // Deleting post from DB
       await API.del(apiName, path, myInit);
     } catch (err) {
       console.log(err);
-    } finally {
-      getPosts();
     }
   }
 
   return (
-    <div className='min-h-screen w-screen flex-col '>
+    <div className=' min-h-screen  w-screen flex-col '>
       <div className='right float-right hidden h-full lg:block lg:w-1/3'>
         <div className='border-no-hover-color mx-6 mt-4 h-96 border bg-white sm:rounded-md '>
           <UserProfilePanel />
