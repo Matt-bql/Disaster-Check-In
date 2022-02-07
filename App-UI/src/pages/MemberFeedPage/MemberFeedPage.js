@@ -105,7 +105,7 @@ export default function MemberFeedPage() {
     <div className=' min-h-screen  w-screen flex-col '>
       <div className='right float-right hidden h-full lg:block lg:w-1/3'>
         <div className='border-no-hover-color mx-6 mt-4 h-96 border bg-white sm:rounded-md '>
-          <UserProfilePanel />
+          <UserProfilePanel posts={posts} />
         </div>
       </div>
       <div className='flex lg:w-2/3 '>
