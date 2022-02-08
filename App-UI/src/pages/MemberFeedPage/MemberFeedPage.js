@@ -110,21 +110,21 @@ export default function MemberFeedPage() {
       </div>
       <div className='flex lg:w-2/3 '>
         <div className='border-no-hover-color my-4 flex h-16 w-full place-items-center rounded-sm border bg-white sm:mx-6 sm:rounded-md lg:mx-0 lg:ml-6'>
-          <span className='w-1/3 '>
-            {/* <img
-              className=' h-10 rounded-full mr-4 inline-block'
+          <span className='h-full w-1/5'>
+            <img
+              className='mr-4 inline-block h-10 rounded-full '
               src='App-UI/src/assets/hero.webp'
               alt='profile'
-            /> */}
+            />
           </span>
-          <span className='flex h-full w-4/5 place-items-center'>
+          <span className='flex h-full w-3/5 place-items-center'>
             <PostForm
               submitPostHandler={submitPostHandler}
               postBody={postBody}
               setPostBody={setPostBody}
             />
           </span>
-          <span className='w-1/3'></span>
+          <span className='h-full w-1/5'>test</span>
         </div>
       </div>
       <div className='flex h-full w-full lg:w-2/3 '>

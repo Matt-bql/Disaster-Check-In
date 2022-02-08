@@ -13,21 +13,27 @@ export default function Header() {
   }
 
   return (
-    <div className="md:h-18 sticky top-0 z-20 h-12 w-screen bg-header-primary-color p-2.5 text-white ">
-      <div className="mx-2 flex max-w-7xl items-center justify-between">
-        <button className=" sm:ml-4">
-          <Link to="/">LOGO</Link>
+    <div className='md:h-18 bg-header-primary-color sticky top-0 z-20 h-12 w-screen text-white '>
+      <div className=' mx-2 flex h-full max-w-7xl items-center justify-between  lg:mx-4'>
+        <button className=' sm:ml-4'>
+          <Link to='/'>LOGO</Link>
         </button>
-        <CustomGreeting />
-        <button>
-          <div onClick={onClickHandler} className="uppercase sm:mr-5 md:hidden">
-            Menu
-          </div>
+
+        <div>
+          <CustomGreeting />
+        </div>
+
+        <button
+          onClick={onClickHandler}
+          className=' uppercase hover:text-red-600 sm:mr-5 md:hidden '
+        >
+          Menu
         </button>
+
         <nav
           className={`${!active && "hidden"}
-            absolute top-full right-0 z-20 flex flex-col
-            bg-header-primary-color md:static md:flex md:w-auto
+            bg-header-primary-color absolute top-full right-0 z-20 flex
+            flex-col md:static md:flex md:w-auto
           md:flex-row 
           `}
         >

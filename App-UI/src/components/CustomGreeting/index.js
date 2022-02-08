@@ -7,7 +7,7 @@ import awsconfig from "../../aws-exports";
 
 Amplify.configure(awsconfig);
 
-const AuthStateApp = () => {
+export default function AuthStateApp() {
   const [authState, setAuthState] = useState();
   const [user, setUser] = useState();
 
@@ -19,9 +19,6 @@ const AuthStateApp = () => {
   }, [authState, user]);
 
   return authState === AuthState.SignedIn && user ? (
-    <div className="App ">
-      <div className="text-white">Hello, {user.username}</div>
-    </div>
+    <p>Hello, {user.username}</p>
   ) : null;
-};
-export default AuthStateApp;
+}
