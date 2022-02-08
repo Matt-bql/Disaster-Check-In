@@ -62,11 +62,6 @@ export default function MemberPageContent(props) {
               </span>
             </div>
           </div>
-          {/* <div className='flex h-full w-full lg:w-2/3'>
-            <div className=' ml-2 h-full w-full sm:mx-6 lg:ml-6 lg:mr-0'>
-              something
-            </div>
-          </div> */}
         </>
       )}
     </div>
