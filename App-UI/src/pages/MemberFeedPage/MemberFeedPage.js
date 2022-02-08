@@ -2,9 +2,10 @@
 import React, { useState, useEffect } from "react";
 // Components
 import PostFeedLoop from "../../components/PostFeed/PostFeedLoop";
-import PostForm from "../../components/PostForm/PostForm";
+import PostFormConditionalHandler from "../../components/PostFormConditionalHandler/PostFormConditionalHandler";
 import UserProfilePanel from "../../components/UserProfilePanel/UserProfilePanel";
-import AllFeedContent from "./AllFeedContent";
+import MemberPageContent from "./MemberPageContent";
+import CreatePostForm from "../../components/CreatePostForm/CreatePostForm";
 // Libraries
 // import { v4 as uuidv4 } from "uuid";
 import Amplify, { API, Auth } from "aws-amplify";
@@ -15,11 +16,12 @@ API.configure(awsconfig);
 
 export default function MemberFeedPage() {
   const [postBody, setPostBody] = useState("");
+  const [postTitle, setPostTitle] = useState("");
   const [posts, setPosts] = useState([]);
   const [isWaiting, setIsWaiting] = useState(false);
   const [currentUserData, setCurrentUserData] = useState("");
-  const [postTitle, setPostTitle] = useState("");
   const [isInputClicked, setIsInputClicked] = useState(false);
+
   useEffect(() => {
     getPosts();
     getAuthUserData();
@@ -70,12 +72,14 @@ export default function MemberFeedPage() {
         // Implementing optimistic UI for faster response.
         const newArr = [myInit.body, ...posts];
         setPosts(newArr);
-        setPostBody("");
 
         // Posting to DB
         await API.post(apiName, path, myInit);
       } catch (err) {
         console.log("error submitting post to database.", err);
+      } finally {
+        setPostTitle("");
+        setPostBody("");
       }
     }
   }
@@ -103,12 +107,12 @@ export default function MemberFeedPage() {
       console.log(err);
     }
   }
-
+  console.log(isInputClicked);
   return (
-    <AllFeedContent
+    <MemberPageContent
       Panel={<UserProfilePanel posts={posts} />}
-      Form={
-        <PostForm
+      ConditionalHandler={
+        <PostFormConditionalHandler
           submitPostHandler={submitPostHandler}
           postBody={postBody}
           setPostBody={setPostBody}
@@ -125,6 +129,18 @@ export default function MemberFeedPage() {
           deletePostHandler={deletePostHandler}
         />
       }
-    ></AllFeedContent>
+      Form={
+        <CreatePostForm
+          submitPostHandler={submitPostHandler}
+          postBody={postBody}
+          setPostBody={setPostBody}
+          setPostTitle={setPostTitle}
+          setIsInputClicked={setIsInputClicked}
+          isInputClicked={isInputClicked}
+        />
+      }
+      isInputClicked={isInputClicked}
+      setIsInputClicked={setIsInputClicked}
+    ></MemberPageContent>
   );
 }
