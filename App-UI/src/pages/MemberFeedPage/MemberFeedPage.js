@@ -17,6 +17,7 @@ export default function MemberFeedPage() {
   const [posts, setPosts] = useState([]);
   const [isWaiting, setIsWaiting] = useState(false);
   const [currentUserData, setCurrentUserData] = useState("");
+  const [postTitle, setPostTitle] = useState("");
   useEffect(() => {
     getPosts();
     getAuthUserData();
@@ -28,7 +29,6 @@ export default function MemberFeedPage() {
   }
   // Sorting posts by time posted.
   function compare(a, b) {
-    // const copyy = [...posts]
     if (a.id > b.id) return -1;
     if (a.id < b.id) return 1;
     return 0;
@@ -57,6 +57,7 @@ export default function MemberFeedPage() {
         const path = "/posts/";
         const myInit = {
           body: {
+            title: postTitle,
             id: Date.now().toLocaleString(),
             datePosted: new Date().toLocaleDateString(),
             postedBy: currentUserData.username,
@@ -122,6 +123,7 @@ export default function MemberFeedPage() {
               submitPostHandler={submitPostHandler}
               postBody={postBody}
               setPostBody={setPostBody}
+              setPostTitle={setPostTitle}
             />
           </span>
           <span className='h-full w-1/5'>test</span>

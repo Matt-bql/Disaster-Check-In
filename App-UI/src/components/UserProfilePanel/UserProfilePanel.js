@@ -42,7 +42,7 @@ export default function UserProfilePanel({ posts }) {
         <div className='h-5/6 overflow-scroll border'>
           {posts.map(post => {
             return (
-              <div key={post.id} className='w-ful '>
+              <div key={post.id} className='w-full'>
                 {post.postedBy === username ? (
                   <p className='my-2 cursor-pointer items-center border-b py-2 hover:bg-gray-200'>
                     {post.body} {post.datePosted}
