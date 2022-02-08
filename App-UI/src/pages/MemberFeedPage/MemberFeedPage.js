@@ -4,6 +4,7 @@ import React, { useState, useEffect } from "react";
 import PostFeedLoop from "../../components/PostFeed/PostFeedLoop";
 import PostForm from "../../components/PostForm/PostForm";
 import UserProfilePanel from "../../components/UserProfilePanel/UserProfilePanel";
+import AllFeedContent from "./AllFeedContent";
 // Libraries
 // import { v4 as uuidv4 } from "uuid";
 import Amplify, { API, Auth } from "aws-amplify";
@@ -18,6 +19,7 @@ export default function MemberFeedPage() {
   const [isWaiting, setIsWaiting] = useState(false);
   const [currentUserData, setCurrentUserData] = useState("");
   const [postTitle, setPostTitle] = useState("");
+  const [isInputClicked, setIsInputClicked] = useState(false);
   useEffect(() => {
     getPosts();
     getAuthUserData();
@@ -103,42 +105,26 @@ export default function MemberFeedPage() {
   }
 
   return (
-    <div className=' min-h-screen  w-screen flex-col '>
-      <div className='right float-right hidden h-full lg:block lg:w-1/3'>
-        <div className='border-no-hover-color mx-6 mt-4 h-96 border bg-white sm:rounded-md '>
-          <UserProfilePanel posts={posts} />
-        </div>
-      </div>
-      <div className='flex lg:w-2/3 '>
-        <div className='border-no-hover-color my-4 flex h-16 w-full place-items-center rounded-sm border bg-white sm:mx-6 sm:rounded-md lg:mx-0 lg:ml-6'>
-          <span className='h-full w-1/5'>
-            <img
-              className='mr-4 inline-block h-10 rounded-full '
-              src='App-UI/src/assets/hero.webp'
-              alt='profile'
-            />
-          </span>
-          <span className='flex h-full w-3/5 place-items-center'>
-            <PostForm
-              submitPostHandler={submitPostHandler}
-              postBody={postBody}
-              setPostBody={setPostBody}
-              setPostTitle={setPostTitle}
-            />
-          </span>
-          <span className='h-full w-1/5'>test</span>
-        </div>
-      </div>
-      <div className='flex h-full w-full lg:w-2/3 '>
-        <div className='h-full w-full sm:mx-6 lg:ml-6 lg:mr-0'>
-          <PostFeedLoop
-            isWaiting={isWaiting}
-            posts={posts}
-            currentUserData={currentUserData}
-            deletePostHandler={deletePostHandler}
-          />
-        </div>
-      </div>
-    </div>
+    <AllFeedContent
+      Panel={<UserProfilePanel posts={posts} />}
+      Form={
+        <PostForm
+          submitPostHandler={submitPostHandler}
+          postBody={postBody}
+          setPostBody={setPostBody}
+          setPostTitle={setPostTitle}
+          setIsInputClicked={setIsInputClicked}
+          isInputClicked={isInputClicked}
+        />
+      }
+      FeedLoop={
+        <PostFeedLoop
+          isWaiting={isWaiting}
+          posts={posts}
+          currentUserData={currentUserData}
+          deletePostHandler={deletePostHandler}
+        />
+      }
+    ></AllFeedContent>
   );
 }
