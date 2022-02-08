@@ -47,6 +47,9 @@ export default function MemberFeedPage() {
       setIsWaiting(false);
     } catch (err) {
       console.log(err);
+    } finally {
+      setPostBody("");
+      setPostTitle("");
     }
   }
 
@@ -71,15 +74,14 @@ export default function MemberFeedPage() {
 
         // Implementing optimistic UI for faster response.
         const newArr = [myInit.body, ...posts];
-        setPosts(newArr);
-
+        await setPosts(newArr);
         // Posting to DB
         await API.post(apiName, path, myInit);
       } catch (err) {
         console.log("error submitting post to database.", err);
       } finally {
-        setPostTitle("");
         setPostBody("");
+        setPostTitle("");
       }
     }
   }

@@ -38,9 +38,9 @@ export default function PostFeed({
                   {datePosted}
                 </span>
               </p>
-              <p className='text- my-2 flex-auto flex-grow font-sans font-normal leading-tight'>
-                {post.body}
-              </p>
+              <h2 className='my-2 flex-auto flex-grow font-sans text-xl font-medium leading-tight text-black'>
+                {post.title}
+              </h2>
               <p className='text-color-small-text text-xs font-bold'>
                 <span>cmnt#</span>
                 <span>tag</span>
